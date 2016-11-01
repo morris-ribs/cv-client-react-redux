@@ -1,2 +1,4 @@
 # cv-client-react-redux
-My CV client app in Reactand Redux
+My CV client app in React and Redux
+
+# Under construction! Please come later ;)
