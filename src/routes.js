@@ -6,7 +6,6 @@ import CandidatePage from './components/candidate/CandidatePage';
 
 export default (
     <Route path="/" component={App}>
-        <IndexRoute component={HomePage} />
-        <Route path="candidate" component={CandidatePage} />
+        <IndexRoute component={CandidatePage} />
     </Route>
 );

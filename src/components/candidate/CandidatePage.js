@@ -5,6 +5,10 @@ import ProfessionalExperienceList from './ProfessionalExperienceList';
 class CandidatePage extends React.Component {
     constructor(props, context) {
         super(props, context);
+
+        this.state = {
+          candidate: Object.assign({}, this.props.candidate)
+        };
     }
     
     candidatePresentation(candidate) {
@@ -13,11 +17,11 @@ class CandidatePage extends React.Component {
     
     render() {
         const candidateToDisplay = this.props.candidate;
-        
+
         return (
             <div>
                 <h1>{this.candidatePresentation(candidateToDisplay)}</h1>                
-                <ProfessionalExperienceList exps={candidateToDisplay.fullcvs[0].experiences}/>             
+                <ProfessionalExperienceList exps={(candidateToDisplay.fullcvs) ? candidateToDisplay.fullcvs[0].experiences : []}/>             
             </div>
         );
     }
