@@ -5,20 +5,16 @@ const Languages = ({languages}) => {
         <div className="row">
             <div className="colXs12 colSm12 colMd12">
                 <h3>Langues</h3>
-                {this.props.languages.map(lang =>
+                {languages.map(lang =>
                     <div className="row">
                         <div className="colXs12 colSm3 colMd3">
-                            <span style={{fontSize: '16px'}}>{lang.name} ({lang.level})</span>
+                            <span style={{fontSize: '16px'}}>{lang.name}</span>
                         </div>
                     </div>
                 )} 
             </div>
         </div>
     );
-};
-
-Languages.propTypes = {
-    languages: PropTypes.array.isRequired
 };
 
 export default Languages;
