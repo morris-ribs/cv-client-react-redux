@@ -26,22 +26,22 @@ class Degree extends React.Component {
                 <div className="colXs12 colSm12 colMd12 pad">
                     <div className="row">
                         <div className="colXs12 colSm12 colMd12 details">
-                            <span style={{fontSize: '24px'}}>{degree.schoolname}</span>
+                            <span style={{fontSize: '24px'}}>{degreeToDisplay.schoolname}</span>
                             <div>
                                 <button onClick={this.handleClick}>Show/Hide</button>
                             </div>
                             <br />
-                            <span style={{fontSize: '18px'}}>{degree.location}</span>
+                            <span style={{fontSize: '18px'}}>{degreeToDisplay.location}</span>
                             <br />
-                            <span style={{fontSize: '18px'}}>{degree.period}</span>							  
+                            <span style={{fontSize: '18px'}}>{degreeToDisplay.period}</span>							  
                         </div>
                     </div>
                     <div className={isHidden ? "hidden":"row"}>
                         <div className="colXs12 colSm12 colMd12">
-                            <h4>{degree.degree}</h4>
+                            <h4>{degreeToDisplay.degree}</h4>
                             <div className="row">
                                 <div className="colXs12 colSm12 colMd12">
-                                    {degree.description}
+                                    {degreeToDisplay.description}
                                 </div>
                             </div>
                         </div>
