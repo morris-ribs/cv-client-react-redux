@@ -1,4 +1,4 @@
 # cv-client-react-redux
 My CV client app in React and Redux
 
-# Under construction! Please come later ;)
+This project is the client of the API cv-server-Go
