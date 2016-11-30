@@ -1,16 +1,18 @@
 import React, {PropTypes} from 'react';
+import { Row, Col } from 'react-bootstrap';
 
 const Technos = ({techs}) => {
     return (
-        <div className="row">
-            <div className="colXs12 colSsm12 colMd12">
-                {(techs != null) ? techs.map(tech => <div>
+        <Row>
+            <Col xs={12} sm={12} md={12}>
+                {(techs != null) ? techs.map(tech => 
+                    <div>
                     {tech.name} <br />
                     </div>
                 ) : []
             }
-            </div>
-        </div>
+            </Col>
+        </Row>
     );
 };
 

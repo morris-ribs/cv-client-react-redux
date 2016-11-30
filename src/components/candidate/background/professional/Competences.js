@@ -1,37 +1,38 @@
 import React, {PropTypes} from 'react';
 import Technos from './Technos';
+import { Row, Col } from 'react-bootstrap';
 
 const Competences = ({technologies}) => {
     return (
-        <div className="row">
-            <div className="colXs12 colSm12 colMd12">
+        <Row>
+            <Col xs={12} sm={12} md={12}>
                 <h4>Comp&eacute;tences acquises</h4>
-                <div className="row">
-                    <div className="colXs12 colSm12 colMd12">
+                <Row>
+                    <Col xs={12} sm={12} md={12}>
                         Backend :
                         <Technos techs={technologies.backend} />
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="colXs12 colSm12 colMd12">
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs={12} sm={12} md={12}>
                         Base de donn&eacute;es :
                         <Technos techs={technologies.database} />
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="colXs12 colSm12 colMd12">
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs={12} sm={12} md={12}>
                         Frontend :
                         <Technos techs={technologies.frontend} />
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="colXs12 colSm12 colMd12">
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs={12} sm={12} md={12}>
                         Contr&ocirc;le de version :
                         <Technos techs={technologies.controlversion} />
-                    </div>
-                </div>
-            </div>
-        </div>
+                    </Col>
+                </Row>
+            </Col>
+        </Row>
     );
 };
 

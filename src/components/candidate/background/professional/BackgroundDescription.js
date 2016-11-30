@@ -1,6 +1,7 @@
 import React, {PropTypes} from 'react';
 import Projects from './Projects';
 import Competences from './Competences';
+import { Row, Col } from 'react-bootstrap';
 
 class BackgroundDescription extends React.Component {
     constructor(props) {
@@ -10,22 +11,22 @@ class BackgroundDescription extends React.Component {
     render() {
         const expToDisplay = this.props.background;       
         return (
-            <div className="row exp">                    
-                <div className="colXs12 colSm12 colMd12">
-                    <div className="row">
-                        <div className="colXs12 colSm12 colMd12">
+            <Row>                    
+                <Col xs={12} sm={12} md={12}>
+                    <Row>
+                        <Col xs={12} sm={12} md={12}>
                             <h4>Description</h4>
-                            <div className="row">
-                                <div className="colXs12 colSm12 colMd12">
+                            <Row>
+                                <Col xs={12} sm={12} md={12}>
                                 {expToDisplay.companydescription}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                </Col>
+                            </Row>
+                        </Col>
+                    </Row>
                     <Projects projects={expToDisplay.projects} />
                     <Competences technologies={expToDisplay.technologies} />
-                </div>
-            </div>
+                </Col>
+            </Row>
         );
     }
 }

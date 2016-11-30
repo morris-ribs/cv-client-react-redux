@@ -24,7 +24,7 @@ class CandidatePage extends React.Component {
             <div>
                 <h1>{this.candidatePresentation(candidateToDisplay)}</h1>                
                 <ProfessionalExperienceList exps={(candidateToDisplay.fullcvs) ? candidateToDisplay.fullcvs[0].experiences : []} />             
-                <DegreeList education={(candidateToDisplay.fullcvs) ? candidateToDisplay.fullcvs[0].education : []} />>             
+                <DegreeList education={(candidateToDisplay.fullcvs) ? candidateToDisplay.fullcvs[0].education : []} />            
                 <Languages languages={(candidateToDisplay.fullcvs) ? candidateToDisplay.fullcvs[0].languages : []} />
             </div>
         );

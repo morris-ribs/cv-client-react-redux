@@ -1,5 +1,6 @@
 import React, {PropTypes} from 'react';
 import BackgroundDescription from './background/professional/BackgroundDescription';
+import { ButtonToolbar, Button, Row, Col } from 'react-bootstrap';
 
 class ProfessionalExperience extends React.Component {
     constructor(props, context) {
@@ -23,26 +24,35 @@ class ProfessionalExperience extends React.Component {
         const isHidden = this.state.isHidden;
         /**/
         return (
-            <div className="row">
-                <div className="colXs12 colSm12 colMd12 pad">
-                    <div className="row">
-                        <div className="colXs12 colSm12 colMd12 details">
-                            <span style={{fontSize: '24px'}}>{expToDisplay.companyname}</span>
-                            <button onClick={this.handleClick}>Show/Hide</button>
-                            <div className="btn-details">
-                                <img src="img/down-arrow.png" alt="Expand" />
-                            </div>
-                            <br />
-                            <span style={{fontSize: '18px'}}>{expToDisplay.location}</span>
-                            <br />
-                            <span style={{fontSize: '18px'}}>{expToDisplay.period}</span>
-                        </div>
-                    </div>
+            <Row>
+                <Col xs={12} sm={12} md={12}>
+                    <Row>
+                        <Col xs={12} sm={12} md={12}>
+                            <Row>
+                                <Col xs={8} sm={8} md={6}>
+                                    <span style={{fontSize: '24px'}}>{expToDisplay.companyname}</span> 
+                                </Col>
+                                <Col xs={4} sm={4} md={6}>                           
+                                    <Button onClick={this.handleClick}>Show/Hide</Button>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col xs={12} sm={12} md={12}>
+                                    <span style={{fontSize: '18px'}}>{expToDisplay.location}</span>
+                                 </Col>
+                            </Row>
+                            <Row>
+                                <Col xs={12} sm={12} md={12}>
+                                    <span style={{fontSize: '18px'}}>{expToDisplay.period}</span>
+                                 </Col>
+                            </Row>
+                        </Col>
+                    </Row>
                     <div className={isHidden ? "hidden":""}>
                         <BackgroundDescription background={expToDisplay} />
                     </div>
-                </div>
-            </div>
+                </Col>
+            </Row>
         );
     }
 }

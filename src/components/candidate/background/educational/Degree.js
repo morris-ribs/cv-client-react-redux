@@ -1,4 +1,5 @@
 import React, {PropTypes} from 'react';
+import { Row, Col } from 'react-bootstrap';
 
 class Degree extends React.Component {
     constructor(props, context) {
@@ -22,32 +23,29 @@ class Degree extends React.Component {
         const isHidden = this.state.isHidden;
 
         return(
-            <div className="row">
-                <div className="colXs12 colSm12 colMd12 pad">
-                    <div className="row">
-                        <div className="colXs12 colSm12 colMd12 details">
+            <Row>
+                <Col xs={12} sm={12} md={12}>
+                    <Row>
+                        <Col xs={12} sm={12} md={12}>
                             <span style={{fontSize: '24px'}}>{degreeToDisplay.schoolname}</span>
-                            <div>
-                                <button onClick={this.handleClick}>Show/Hide</button>
-                            </div>
                             <br />
                             <span style={{fontSize: '18px'}}>{degreeToDisplay.location}</span>
                             <br />
                             <span style={{fontSize: '18px'}}>{degreeToDisplay.period}</span>							  
-                        </div>
-                    </div>
-                    <div className={isHidden ? "hidden":"row"}>
-                        <div className="colXs12 colSm12 colMd12">
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col xs={12} sm={12} md={12}>
                             <h4>{degreeToDisplay.degree}</h4>
-                            <div className="row">
-                                <div className="colXs12 colSm12 colMd12">
+                            <Row>
+                                <Col xs={12} sm={12} md={12}>
                                     {degreeToDisplay.description}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                                </Col>
+                            </Row>
+                        </Col>
+                    </Row>
+                </Col>
+            </Row>
         );
     }
 }
