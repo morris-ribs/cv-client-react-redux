@@ -24,22 +24,22 @@ class Degree extends React.Component {
 
         return(
             <Row>
-                <Col xs={12} sm={12} md={12}>
+                <Col xs={12}>
                     <Row>
-                        <Col xs={12} sm={12} md={12}>
-                            <span style={{fontSize: '24px'}}>{degreeToDisplay.schoolname}</span>
+                        <Col xs={12}>
+                            <span className="span-presentation-font-size">{degreeToDisplay.schoolname}</span>
                             <br />
-                            <span style={{fontSize: '18px'}}>{degreeToDisplay.location}</span>
+                            <span className="span-basic-font-size">{degreeToDisplay.location}</span>
                             <br />
-                            <span style={{fontSize: '18px'}}>{degreeToDisplay.period}</span>							  
+                            <span className="span-basic-font-size">{degreeToDisplay.period}</span>							  
                         </Col>
                     </Row>
                     <Row>
-                        <Col xs={12} sm={12} md={12}>
+                        <Col xs={12}>
                             <h4>{degreeToDisplay.degree}</h4>
                             <Row>
-                                <Col xs={12} sm={12} md={12}>
-                                    {degreeToDisplay.description}
+                                <Col xs={12}>
+                                    <span className="span-basic-font-size">{degreeToDisplay.description}</span>
                                 </Col>
                             </Row>
                         </Col>

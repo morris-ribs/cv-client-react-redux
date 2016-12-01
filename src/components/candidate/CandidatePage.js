@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import ProfessionalExperienceList from './ProfessionalExperienceList';
 import DegreeList from './background/educational/DegreeList';
 import Languages from './languages/Languages';
+import { Grid, Row, Col } from 'react-bootstrap';
 
 class CandidatePage extends React.Component {
     constructor(props, context) {
@@ -14,19 +15,21 @@ class CandidatePage extends React.Component {
     }
     
     candidatePresentation(candidate) {
-        return <div>{candidate.name}</div>;
+        return <h1>{candidate.name}</h1>;
     }
     
     render() {
         const candidateToDisplay = this.props.candidate;
 
         return (
-            <div>
-                <h1>{this.candidatePresentation(candidateToDisplay)}</h1>                
-                <ProfessionalExperienceList exps={(candidateToDisplay.fullcvs) ? candidateToDisplay.fullcvs[0].experiences : []} />             
-                <DegreeList education={(candidateToDisplay.fullcvs) ? candidateToDisplay.fullcvs[0].education : []} />            
-                <Languages languages={(candidateToDisplay.fullcvs) ? candidateToDisplay.fullcvs[0].languages : []} />
-            </div>
+                <Row>
+                <Col xs={12}>
+                    {this.candidatePresentation(candidateToDisplay)}            
+                    <ProfessionalExperienceList exps={(candidateToDisplay.fullcvs) ? candidateToDisplay.fullcvs[0].experiences : []} />             
+                    <DegreeList education={(candidateToDisplay.fullcvs) ? candidateToDisplay.fullcvs[0].education : []} />            
+                    <Languages languages={(candidateToDisplay.fullcvs) ? candidateToDisplay.fullcvs[0].languages : []} />
+               </Col>
+               </Row>
         );
     }
 }

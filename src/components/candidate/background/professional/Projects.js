@@ -5,12 +5,13 @@ const Projects = ({projects}) => {
     return (
         <Row>
             <Col xs={12} sm={12} md={12}>
-                <h4>Projets</h4>
+                <span className="span-presentation-font-size">Projets</span>
                 <Row>
                     <Col xs={12} sm={12} md={12}>
-                        {projects.map(project => <div>
-                            {project.name} <br />
-                            </div>
+                        {projects.map(project => 
+                            <span key={project.name} className="span-basic-font-size">
+                            {project.name}
+                            </span>
                         )}
                     </Col>
                 </Row>

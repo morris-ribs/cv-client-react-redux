@@ -1,0 +1,65 @@
+@import "variables.scss";
+
+#app {
+    font: $basicSize 'Maitree', 'Helvetica Name', Helvetica, Arial, sans-serif;
+    margin: 0 auto;
+}
+
+a.active {
+    color: orange;
+}
+
+nav {
+    padding-top: 20px;
+}
+
+.row {
+    margin-bottom: 15px;
+}
+
+.basic-border {
+    border: 1px #ddd;
+}
+.pad {
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.pad-up {
+    padding-top: 10px;
+}
+.span-basic-font-size {
+    font-size: $basicSize - 5px;
+}
+.span-presentation-font-size {
+    font-size: $basicSize - 2px;
+    font-weight: bold;
+}
+.btn {
+    font-size: $basicSize - 5px;
+}
+
+@media(min-width:768px) {
+    #app {
+        font-size: $basicSize + 16px;
+    }
+    .span-basic-font-size {
+        font-size: $basicSize + 3px;
+    }
+    .span-presentation-font-size {
+        font-size: $basicSize + 7px;
+        font-weight: bold;
+    }
+}
+
+@media(min-width:1025px) {
+    #app {
+        font-size: $basicSize;
+    }
+    .span-basic-font-size {
+        font-size: $basicSize - 2px;
+    }
+    .span-presentation-font-size {
+        font-size: $basicSize;
+        font-weight: bold;
+    }
+}

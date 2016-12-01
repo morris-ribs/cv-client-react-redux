@@ -12,13 +12,13 @@ class BackgroundDescription extends React.Component {
         const expToDisplay = this.props.background;       
         return (
             <Row>                    
-                <Col xs={12} sm={12} md={12}>
+                <Col xs={12}>
                     <Row>
-                        <Col xs={12} sm={12} md={12}>
-                            <h4>Description</h4>
+                        <Col xs={12}>
+                            <span className="span-presentation-font-size">Description</span>
                             <Row>
-                                <Col xs={12} sm={12} md={12}>
-                                {expToDisplay.companydescription}
+                                <Col xs={12}>
+                                <span className="span-basic-font-size">{expToDisplay.companydescription}</span>
                                 </Col>
                             </Row>
                         </Col>

@@ -1,12 +1,17 @@
 // This component handles the App template used on every page
 import React, {PropTypes} from 'react';
+import { Grid, Row, Col } from 'react-bootstrap';
 
 class App extends React.Component {
     render() {
         return(
-            <div className="container-fluid">
+            <Grid fluid={true}>
+                <Row>
+                <Col xs={12}>
                 {this.props.children}
-            </div>
+                </Col>
+                </Row>
+            </Grid>
         );
     }
 }

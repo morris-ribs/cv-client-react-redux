@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react';
 import Degree from './Degree';
-import { Grid } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 
 // the list of degrees of the candidate
 class DegreeList extends React.Component {
@@ -10,11 +10,14 @@ class DegreeList extends React.Component {
 
     render() {
         return (
-            <Grid>
+            <Row>
+            <Col xs={12}>
+            <span className="span-presentation-font-size">Formation</span>
                 {this.props.education.map(degree => 
                     <Degree degree={degree} key={degree.schoolname} />
-                )}            
-            </Grid>
+                )}
+            </Col>
+            </Row>    
         );
     }
 }

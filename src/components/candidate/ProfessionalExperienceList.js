@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import ProfessionalExperience from './ProfessionalExperience';
-import { Grid } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 
 // we consider a hypothetical candidate.exps as the list of professional experiences
 class ProfessionalExperienceList extends React.Component {
@@ -11,11 +11,13 @@ class ProfessionalExperienceList extends React.Component {
 
     render() {
         return (
-            <Grid>
+            <Row>
+            <Col xs={12}>
                 {this.props.exps.map(exp => 
                     <ProfessionalExperience exp={exp} key={exp.companyname} />
-                )}            
-            </Grid>
+                )}  
+             </Col>
+             </Row>
         );
     }
 }

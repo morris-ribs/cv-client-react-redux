@@ -4,11 +4,11 @@ import { Row, Col } from 'react-bootstrap';
 const Technos = ({techs}) => {
     return (
         <Row>
-            <Col xs={12} sm={12} md={12}>
+            <Col xs={12}>
                 {(techs != null) ? techs.map(tech => 
-                    <div>
+                    <span className="span-basic-font-size">
                     {tech.name} <br />
-                    </div>
+                    </span>
                 ) : []
             }
             </Col>
