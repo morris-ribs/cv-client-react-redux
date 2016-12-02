@@ -1,6 +1,9 @@
 import React, {PropTypes} from 'react';
 import BackgroundDescription from './background/professional/BackgroundDescription';
-import { ButtonToolbar, Button, Collapse, Row, Col } from 'react-bootstrap';
+import Button from 'react-bootstrap/lib/Button';
+import Collapse from 'react-bootstrap/lib/Collapse';
+import Row from 'react-bootstrap/lib/Row';
+import Col from 'react-bootstrap/lib/Col';
 
 class ProfessionalExperience extends React.Component {
     constructor(props, context) {

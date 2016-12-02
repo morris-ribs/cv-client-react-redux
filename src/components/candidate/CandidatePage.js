@@ -3,7 +3,9 @@ import {connect} from 'react-redux';
 import ProfessionalExperienceList from './ProfessionalExperienceList';
 import DegreeList from './background/educational/DegreeList';
 import Languages from './languages/Languages';
-import { Grid, Row, Col } from 'react-bootstrap';
+import Grid from 'react-bootstrap/lib/Grid';
+import Row from 'react-bootstrap/lib/Row';
+import Col from 'react-bootstrap/lib/Col';
 
 class CandidatePage extends React.Component {
     constructor(props, context) {

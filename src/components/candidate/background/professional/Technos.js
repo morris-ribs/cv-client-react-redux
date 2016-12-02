@@ -1,5 +1,6 @@
 import React, {PropTypes} from 'react';
-import { Row, Col } from 'react-bootstrap';
+import Row from 'react-bootstrap/lib/Row';
+import Col from 'react-bootstrap/lib/Col';
 
 const Technos = ({techs}) => {
     return (
