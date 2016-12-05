@@ -7,7 +7,7 @@ import Col from 'react-bootstrap/lib/Col';
 class App extends React.Component {
     render() {
         return(
-            <Grid fluid={true}>
+            <Grid fluid>
                 <Row>
                 <Col xs={12}>
                 {this.props.children}
