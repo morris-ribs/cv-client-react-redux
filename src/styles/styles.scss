@@ -3,63 +3,87 @@
 #app {
     font: $basicSize 'Maitree', 'Helvetica Name', Helvetica, Arial, sans-serif;
     margin: 0 auto;
+    background-color: $backColor;
 }
 
-a.active {
-    color: orange;
+.exph2 {    
+    font-size: $basicSize + 12pt;
+    margin: 0px;
 }
 
-nav {
-    padding-top: 20px;
+.customh3 {
+    font-size: $basicSize + 2pt;
+    margin-bottom: 15px;
 }
 
 .row {
     margin-bottom: 15px;
 }
 
-.basic-border {
-    border: 1px #ddd;
+.workexp{
+    margin-top: 20px;
+    margin-bottom: 25px;
 }
-.pad {
-    padding-bottom: 10px;
-    padding-top: 10px;
-}
-.pad-up {
-    padding-top: 10px;
+
+.column2 {
+    margin-left: 15px;
+    margin-right: 15px;
 }
 .span-basic-font-size {
-    font-size: $basicSize - 5px;
+    font-size: $basicSize;
 }
 .span-presentation-font-size {
-    font-size: $basicSize - 2px;
+    font-size: $basicSize;
     font-weight: bold;
 }
 .btn {
-    font-size: $basicSize - 5px;
+    font-size: $basicSize;
 }
-
+.exp{
+    margin-top: 30px;
+    background-color: $white;
+}
+.presentationcol{
+    margin-top: 30px;
+    background-color: $backColorPres;
+}
+.presentationcontent{
+    margin-top: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+    color: $white;
+}
+.presentationborder{
+    border-style: solid;
+    border-color: $white;
+    border-width: 1px;
+}
 @media(min-width:768px) {
     #app {
-        font-size: $basicSize + 16px;
+        font-size: $basicSize;
     }
     .span-basic-font-size {
-        font-size: $basicSize + 3px;
+        font-size: $basicSize;
     }
     .span-presentation-font-size {
-        font-size: $basicSize + 7px;
+        font-size: $basicSize;
         font-weight: bold;
     }
 }
 
-@media(min-width:1025px) {
+@media(min-width:1024px) {
     #app {
         font-size: $basicSize;
     }
     .span-basic-font-size {
-        font-size: $basicSize - 2px;
+        font-size: $basicSize;
     }
     .span-presentation-font-size {
         font-size: $basicSize;
         font-weight: bold;
+    }
+    .column2 {
+        margin-left: 0;
+        margin-right: 30px;
     }
 }

@@ -8,11 +8,7 @@ class App extends React.Component {
     render() {
         return(
             <Grid fluid>
-                <Row>
-                <Col xs={12}>
                 {this.props.children}
-                </Col>
-                </Row>
             </Grid>
         );
     }

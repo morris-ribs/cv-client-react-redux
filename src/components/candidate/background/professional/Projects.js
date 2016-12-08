@@ -5,10 +5,10 @@ import Col from 'react-bootstrap/lib/Col';
 const Projects = ({projects}) => {
     return (
         <Row>
-            <Col xs={12} sm={12} md={12}>
+            <Col xs={12}>
                 <span className="span-presentation-font-size">Projets</span>
                 <Row>
-                    <Col xs={12} sm={12} md={12}>
+                    <Col xs={12}>
                         {projects.map(project => 
                             <span key={project.name} className="span-basic-font-size">
                             {project.name}

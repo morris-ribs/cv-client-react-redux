@@ -5,9 +5,9 @@ import Col from 'react-bootstrap/lib/Col';
 
 const Languages = ({languages}) => {
     return (
-            <Row>
+            <Row className="exp">
                 <Col xs={12}>
-                    <span className="span-presentation-font-size">Langues</span>
+                    <h2>Languages</h2>
                     <Row>
                     {languages.map(lang =>
                         <Col xs={12} key={lang.name}>
@@ -18,6 +18,10 @@ const Languages = ({languages}) => {
                 </Col>
             </Row>
     );
+};
+
+Languages.propTypes = {
+    languages: PropTypes.array.isRequired
 };
 
 export default Languages;

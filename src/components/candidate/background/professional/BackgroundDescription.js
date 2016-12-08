@@ -1,6 +1,5 @@
 import React, {PropTypes} from 'react';
 import Projects from './Projects';
-import Competences from './Competences';
 import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
 
@@ -16,7 +15,7 @@ class BackgroundDescription extends React.Component {
                 <Col xs={12}>
                     <Row>
                         <Col xs={12}>
-                            <span className="span-presentation-font-size">Description</span>
+                            <span className="customh3">Description</span>
                             <Row>
                                 <Col xs={12}>
                                 <span className="span-basic-font-size">{expToDisplay.companydescription}</span>
@@ -25,7 +24,6 @@ class BackgroundDescription extends React.Component {
                         </Col>
                     </Row>
                     <Projects projects={expToDisplay.projects} />
-                    <Competences technologies={expToDisplay.technologies} />
                 </Col>
             </Row>
         );

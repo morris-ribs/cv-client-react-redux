@@ -10,13 +10,13 @@ class DegreeList extends React.Component {
 
     render() {
         return (
-            <Row>
-            <Col xs={12}>
-            <span className="span-presentation-font-size">Formation</span>
-                {this.props.education.map(degree => 
-                    <Degree degree={degree} key={degree.schoolname} />
-                )}
-            </Col>
+            <Row className="exp">
+                <Col xs={12}>
+                <h2>Formation</h2>
+                    {this.props.education.map(degree => 
+                        <Degree degree={degree} key={degree.schoolname} />
+                    )}
+                </Col>
             </Row>    
         );
     }

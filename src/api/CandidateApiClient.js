@@ -6,7 +6,7 @@ class CandidateApiClient {
    // return new Promise((resolve, reject) => {
      // resolve(Object.assign([], fetch('http://localhost:8080/candidate/5812686067d7dd00cd4ee24c')));
     //});
-    return fetch(`http://localhost:8080/candidate/584514fe21179ae6cfb78611`).then(response => response.json());
+    return fetch(`http://localhost:4000/`).then(response => response.json());
   }
 }
 
