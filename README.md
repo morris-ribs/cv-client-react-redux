@@ -27,3 +27,7 @@ Open http://localhost:8080/ on your beloved web browser.
 In Chrome, it should look like the image below
 
 ![Alt text](/img/screenshot.png)
+
+# Next Steps
+
+For next phase, I am going to dockerize the solution, so that you can run it inside a container.
