@@ -18,7 +18,7 @@ $ git clone https://github.com/morris-ribs/cv-client-react-redux.git
 $ npm start
 ```
 
-It is going to start the server on port **4000**, and the client on port **8080**
+It is going to start the server on port **4000**, and the client on port **8800**
 
 ## Open it on the browser
 
