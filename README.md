@@ -24,9 +24,25 @@ It is going to start the server on port **4000**, and the client on port **8800*
 
 Open http://localhost:8080/ on your beloved web browser. 
 
+# Screenshots
+
 In Chrome, it should look like the image below
 
 ![Alt text](/img/screenshot.png)
+
+In iPad
+
+![Alt text](/img/screenshot-ipad-landscape.png)
+
+![Alt text](/img/screenshot-ipad-portrait1.png)
+
+![Alt text](/img/screenshot-ipad-portrait2.png)
+
+iPhone 5
+
+![Alt text](/img/screenshot-iphone5-1.png)
+
+![Alt text](/img/screenshot-iphone5-2.png)
 
 # Next Steps
 
