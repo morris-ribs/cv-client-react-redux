@@ -18,32 +18,21 @@ class Presentation extends React.Component {
             <Row>
                 <Col xs={12}>
                     <div className="presentationcontent">
-                        <span className="exph2">{candidateToDisplay.name}</span></div>    
-                        <div className="presentationborder">
-                            <Row>
-                                <Col xs={12}><div className="presentationcontent">
-                                {candidateToDisplay.presentation}</div></Col>
-                            </Row>
-                        </div>
-                        <div className="presentationborder">
-                            <Row>
-                                <Col xs={12}><div className="presentationcontent">{candidateToDisplay.phone}</div></Col>
-                            </Row> 
-                        </div> 
-                        <div className="presentationborder">
-                            <Row>
-                                <Col xs={12}>
-                                    <div className="presentationcontent">
-                                        {candidateToDisplay.address ? candidateToDisplay.address.adr1 : ""}
-                                        <br/>
-                                        {candidateToDisplay.address ? candidateToDisplay.address.adr2 : ""}
-                                    </div>
-                                </Col>
-                            </Row>
-                        </div>
-                        <div className="presentationborder">
-                            <Skills skills={candidateToDisplay.skills ? candidateToDisplay.skills : []} />
-                        </div>          
+                        <p className="exph2">{candidateToDisplay.name}</p>
+                    </div>
+                    <div className="presentationcontent">
+                        <p>{candidateToDisplay.presentation}</p>
+                    </div>
+                    <div className="presentationcontent">
+                        <p>{candidateToDisplay.phone}</p>
+                    </div>
+                    <div className="presentationcontent">
+                        <p>{candidateToDisplay.address ? candidateToDisplay.address.adr1 : ""}
+                        <br/>
+                        {candidateToDisplay.address ? candidateToDisplay.address.adr2 : ""}
+                        </p>
+                    </div>
+                    <Skills skills={candidateToDisplay.skills ? candidateToDisplay.skills : []} />                       
                 </Col>
             </Row>
         );

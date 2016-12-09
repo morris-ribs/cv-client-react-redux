@@ -16,7 +16,7 @@
     margin-bottom: 15px;
 }
 
-.row {
+.row-prez {
     margin-bottom: 15px;
 }
 
@@ -56,17 +56,21 @@
 .presentationcol{
     margin-top: 30px;
     background-color: $backColorPres;
+    color: $white;
 }
 .presentationcontent{
     margin-top: 20px;
     margin-left: 15px;
-    margin-right: 15px;
-    color: $white;
+    margin-right: 15px;    
+    border-bottom: 1px solid #4783c2;
+    p {
+        margin-bottom: 15pt;
+    }
 }
+
 .presentationborder{
-    border-style: solid;
-    border-color: $white;
-    border-width: 1px;
+    border-bottom: 1px solid #4783c2;
+    margin-bottom: 5pt;
 }
 .divImg{
         text-align: center;
@@ -112,6 +116,6 @@
     }
     .description{
         margin-top:5px;
-        font-size: 11pt; 
+        font-size: 10pt; 
     }
 }

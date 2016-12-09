@@ -13,9 +13,8 @@ class BackgroundDescription extends React.Component {
         return (
             <Row>                    
                 <Col xs={12}>
-                    <div className="description">
-                        <p>{expToDisplay.companydescription}</p>
-                    </div>
+                    <p className="description">{expToDisplay.companydescription}</p>
+                    
                     <Projects projects={expToDisplay.projects} />
                 </Col>
             </Row>

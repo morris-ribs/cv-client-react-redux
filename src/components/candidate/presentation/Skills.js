@@ -8,10 +8,8 @@ const Skills = ({skills}) => {
         <Row>
             <Col xs={12}>
                 {(skills != null) ? skills.map(skill => 
-                    <div key={skill.name}>
-                        <div className="presentationcontent">
+                    <div style={{marginTop:"10pt", marginLeft:"5pt", marginRight:"5pt"}} key={skill.name}>
                         {skill.name} <br />
-                        </div>
                         <div className="progressSkill">
                         <ProgressBar style={{height:"10px"}} bsStyle="info" active now={parseInt(skill.level)} />
                          </div>
