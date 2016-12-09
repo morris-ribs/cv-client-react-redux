@@ -6,7 +6,7 @@ const Projects = ({projects}) => {
     return (
         <Row>
             <Col xs={12}>
-                <span className="span-presentation-font-size">Projets</span>
+                <span className="span-basic thick">Projects</span>
                 <Row>
                     <Col xs={12}>
                         {projects.map(project => 

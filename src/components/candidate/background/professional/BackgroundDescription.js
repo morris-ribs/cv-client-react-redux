@@ -13,16 +13,9 @@ class BackgroundDescription extends React.Component {
         return (
             <Row>                    
                 <Col xs={12}>
-                    <Row>
-                        <Col xs={12}>
-                            <span className="customh3">Description</span>
-                            <Row>
-                                <Col xs={12}>
-                                <span className="span-basic-font-size">{expToDisplay.companydescription}</span>
-                                </Col>
-                            </Row>
-                        </Col>
-                    </Row>
+                    <div className="description">
+                        <p>{expToDisplay.companydescription}</p>
+                    </div>
                     <Projects projects={expToDisplay.projects} />
                 </Col>
             </Row>

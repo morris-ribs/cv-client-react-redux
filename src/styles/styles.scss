@@ -1,13 +1,13 @@
 @import "variables.scss";
 
 #app {
-    font: $basicSize 'Maitree', 'Helvetica Name', Helvetica, Arial, sans-serif;
+    font: $basicSize 'Roboto', 'Helvetica Name', Helvetica, Arial, sans-serif;
     margin: 0 auto;
     background-color: $backColor;
 }
 
 .exph2 {    
-    font-size: $basicSize + 12pt;
+    font-size: $basicSize + 10pt;
     margin: 0px;
 }
 
@@ -23,11 +23,21 @@
 .workexp{
     margin-top: 20px;
     margin-bottom: 25px;
+    text-align: center;
 }
 
 .column2 {
     margin-left: 15px;
     margin-right: 15px;
+}
+.span-basic {
+    font-size: $basicSize + 2pt;
+}
+.thick {
+    font-weight: bold;
+}
+.blu{
+    color: blue;
 }
 .span-basic-font-size {
     font-size: $basicSize;
@@ -58,32 +68,50 @@
     border-color: $white;
     border-width: 1px;
 }
+.divImg{
+        text-align: center;
+    }
+.imgSize { 
+    font-size: 20pt;  
+}
+.description{
+    margin-top:5px;
+    font-size: 10pt; 
+}
 @media(min-width:768px) {
     #app {
         font-size: $basicSize;
     }
     .span-basic-font-size {
-        font-size: $basicSize;
+        font-size: $basicSize + 2pt;
     }
     .span-presentation-font-size {
-        font-size: $basicSize;
+        font-size: $basicSize + 5pt;
         font-weight: bold;
+    }
+    .divImg{
+        text-align: left;
+        width: 100%;
+    }
+    .imgSize { 
+        font-size: 30pt;  
+    }
+    .workexp{
+        text-align: left;
+    }
+    .description{
+        margin-top:5px;
+        font-size: 13pt; 
     }
 }
 
 @media(min-width:1024px) {
-    #app {
-        font-size: $basicSize;
-    }
-    .span-basic-font-size {
-        font-size: $basicSize;
-    }
-    .span-presentation-font-size {
-        font-size: $basicSize;
-        font-weight: bold;
-    }
     .column2 {
         margin-left: 0;
         margin-right: 30px;
+    }
+    .description{
+        margin-top:5px;
+        font-size: 11pt; 
     }
 }

@@ -64,7 +64,7 @@ let DummyData = {
       "experiences": [
         {
           "companyname": "Hello World Ltd",
-          "companydescription": "Hello World !",
+          "companydescription": "Hic amisit possem ventus dubium vereor jam ita educta. Quamdiu du acquiri attendo re attendo quomodo. Et me viderentur distinctae intellectu addiscerem. At innatas delusum fuistis emittet sciamus ac quaedam. Chartam mox aut non fas praemia finitus habetur quaenam.       Idque ignem magis capax jam rea nul.",
           "location": "Here",
           "period": "Since Aug. 2013",
           "projects": [
@@ -72,33 +72,7 @@ let DummyData = {
               "name": "One project",
               "description": "only one"
             }
-          ],
-          "technologies": {
-            "backend": [
-              {
-                "name": ".Net",
-                "level": "90"
-              }
-            ],
-            "frontend": [
-              {
-                "name": "JS",
-                "level": "10"
-              }
-            ],
-            "database": [
-              {
-                "name": "SQL Server 2014 (T-SQL)",
-                "level": "80"
-              }
-            ],
-            "controlversion": [
-              {
-                "name": "TFS",
-                "level": "70"
-              }
-            ]
-          }        
+          ]
         }
       ],
       "education": [
@@ -107,12 +81,18 @@ let DummyData = {
           "location": "France",
           "period": "Sep. 2001/Jul. 2012",
           "degree": "Master's degree 2nd year",
-          "description": "Survival"
+          "description": "Cur convenit formemus profecto cui totamque cap sequatur hic. Appello nam sim humanum ferenda maximam."
         }
       ],
       "languages": [       
         {
           "name": "English"
+        },
+        {
+          "name": "Spanish"
+        },
+        {
+          "name": "French"
         }
       ]
     }

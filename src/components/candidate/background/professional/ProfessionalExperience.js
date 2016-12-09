@@ -11,32 +11,16 @@ class ProfessionalExperience extends React.Component {
     render() {
         const expToDisplay = this.props.exp;
         return (
-            <Row className="basic-border" onClick={this.handleClick}>
+            <Row className="basic-border">
                 <Col xs={12}>
-                    <Row>
+                    <div style={{marginTop:"15px"}}>
                         <Col xs={12}>
-                            <Row>
-                                <div className="column2">
-                                <Col xs={12}>
-                                    <span>{expToDisplay.companyname}</span> 
-                                </Col>
-                                </div>
-                            </Row>
-                            <Row>
-                                <div className="column2"><Col xs={7}>
-                                    <span className="span-basic-font-size">{expToDisplay.location}</span>
-                                 </Col>
-                                 <Col xs={5}>
-                                    <span className="span-basic-font-size">{expToDisplay.period}</span>
-                                 </Col></div>
-                            </Row>
+                            <span className="span-basic thick">{expToDisplay.companyname} @{expToDisplay.location}</span><br />
+                            <span className="span-basic blu">{expToDisplay.period}</span>
+                            <br />
+                            <BackgroundDescription background={expToDisplay} />
                         </Col>
-                    </Row>
-                    <Row>
-                        <Col xs={12}>
-                           <BackgroundDescription background={expToDisplay} />
-                        </Col>
-                    </Row>
+                    </div>
                 </Col>
             </Row>
         );

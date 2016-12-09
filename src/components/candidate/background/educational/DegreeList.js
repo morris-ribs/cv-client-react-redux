@@ -1,6 +1,7 @@
 import React, {PropTypes} from 'react';
 import Degree from './Degree';
 import { Row, Col } from 'react-bootstrap';
+import FaGraduationCap from 'react-icons/lib/fa/graduation-cap';
 
 // the list of degrees of the candidate
 class DegreeList extends React.Component {
@@ -12,10 +13,17 @@ class DegreeList extends React.Component {
         return (
             <Row className="exp">
                 <Col xs={12}>
-                <h2>Formation</h2>
-                    {this.props.education.map(degree => 
-                        <Degree degree={degree} key={degree.schoolname} />
-                    )}
+                    <div className="workexp">
+                        <Col xs={12} sm={1}>
+                            <div className="divImg"><FaGraduationCap className="imgSize" /></div>
+                        </Col>
+                        <Col xs={12} sm={11}>                        
+                            <span className="exph2">Education</span>
+                        </Col>                    
+                        {this.props.education.map(degree => 
+                            <Degree degree={degree} key={degree.schoolname} />
+                        )} 
+                    </div>                    
                 </Col>
             </Row>    
         );

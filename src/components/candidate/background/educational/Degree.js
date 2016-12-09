@@ -25,25 +25,15 @@ class Degree extends React.Component {
         return(
             <Row>
                 <Col xs={12}>
-                    <Row>
-                        <Col xs={12}>
-                            <span className="span-presentation-font-size">{degreeToDisplay.schoolname}</span>
-                            <br />
-                            <span className="span-basic-font-size">{degreeToDisplay.location}</span>
-                            <br />
-                            <span className="span-basic-font-size">{degreeToDisplay.period}</span>							  
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col xs={12}>
-                            <h4>{degreeToDisplay.degree}</h4>
-                            <Row>
-                                <Col xs={12}>
-                                    <span className="span-basic-font-size">{degreeToDisplay.description}</span>
-                                </Col>
-                            </Row>
-                        </Col>
-                    </Row>
+                    <div style={{marginTop:"15px"}}>
+                        <span className="span-basic thick">{degreeToDisplay.degree} @{degreeToDisplay.schoolname}, {degreeToDisplay.location}</span>
+                        <br />
+                        <span className="span-basic blu">{degreeToDisplay.period}</span>
+                        <br />							 
+                        <div className="description">
+                            <p>{degreeToDisplay.description}</p>
+                        </div>
+                    </div>                            
                 </Col>
             </Row>
         );
