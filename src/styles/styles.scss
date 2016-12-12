@@ -65,6 +65,7 @@
     border-bottom: 1px solid #4783c2;
     p {
         margin-bottom: 15pt;
+        text-align: center;
     }
 }
 
@@ -73,10 +74,15 @@
     margin-bottom: 5pt;
 }
 .divImg{
-        text-align: center;
-    }
+    text-align: center;
+}
 .imgSize { 
-    font-size: 20pt;  
+    font-size: $basicSize + 10pt;  
+}
+.imgPresentation { 
+    font-size: $basicSize + 5pt;
+    text-align: center;
+    margin-bottom: 2pt;
 }
 .description{
     margin-top:5px;
@@ -117,5 +123,12 @@
     .description{
         margin-top:5px;
         font-size: 10pt; 
+    }
+    .imgPresentation { 
+        text-align: left;
+        margin: 0;
+    }
+    .presentationcontent p {
+        text-align: left;
     }
 }
