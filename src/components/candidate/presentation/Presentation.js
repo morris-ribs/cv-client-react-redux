@@ -22,7 +22,7 @@ class Presentation extends React.Component {
             <Row>
                 <Col xs={12}>
                     <div className="presentationcontent">
-                            <p className="exph2">{candidateToDisplay.name}</p>
+                        <p className="exph2">{candidateToDisplay.name}</p>
                     </div>
                     <div className="presentationcontent">
                         <Row>
