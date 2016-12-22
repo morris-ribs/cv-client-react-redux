@@ -48,7 +48,7 @@ class Presentation extends React.Component {
                             </Col>
                         </Row>
                     </div>
-                     <div className="presentationcontent">
+                    <div className="presentationcontent">
                         <Row>
                             <Col xs={12} sm={1} md={3}>
                                 <div className="divImg">

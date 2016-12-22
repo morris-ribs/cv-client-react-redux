@@ -6,28 +6,29 @@ import FaCalendarCheckO from 'react-icons/lib/fa/calendar-check-o';
 
 const Skills = ({skills}) => {
     return (
-        <Row>
-            <Col xs={12} sm={1} md={3}>
-                <div className="divImg">
-                    <FaCalendarCheckO className="imgPresentation" />
-                </div>
-            </Col>
-            <Col xs={12} sm={11} md={9}>
-                <p>Professional Skills</p>
-            </Col>
-
-            <Col xs={12}>
-                {(skills != null) ? skills.map(skill => 
-                    <div style={{marginTop:"10pt", marginLeft:"5pt", marginRight:"5pt"}} key={skill.name}>
-                        {skill.name} <br />
-                        <div className="progressSkill">
-                        <ProgressBar style={{height:"10px"}} bsStyle="info" active now={parseInt(skill.level)} />
-                         </div>
+         <div className="presentationcontent">
+            <Row>
+                <Col xs={12} sm={1} md={3}>
+                    <div className="divImg">
+                        <FaCalendarCheckO className="imgPresentation" />
                     </div>
-                ) : []
-            }
-            </Col>
-        </Row>
+                </Col>
+                <Col xs={12} sm={11} md={9}>
+                    <p className="professional-skills">Professional Skills</p>
+                </Col>
+                <Col xs={12}>
+                    {(skills != null) ? skills.map(skill => 
+                        <div style={{marginTop:"10pt", marginLeft:"5pt", marginRight:"5pt"}} key={skill.name}>
+                            {skill.name} <br />
+                            <div className="progressSkill">
+                                <ProgressBar style={{height:"10px"}} bsStyle="info" active now={parseInt(skill.level)} />
+                            </div>
+                        </div>
+                    ) : []
+                }
+                </Col>
+            </Row>
+        </div>
     );
 };
 

@@ -88,6 +88,11 @@
     margin-top:5px;
     font-size: 10pt; 
 }
+.professional-skills{
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 12pt; 
+}
 @media(min-width:768px) {
     #app {
         font-size: $basicSize;
@@ -106,12 +111,15 @@
     .imgSize { 
         font-size: 30pt;  
     }
-    .workexp{
+    .workexp {
         text-align: left;
     }
-    .description{
+    .description {
         margin-top:5px;
         font-size: 13pt; 
+    }
+    .professional-skills {
+        margin: 0;
     }
 }
 
