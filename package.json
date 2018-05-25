@@ -24,6 +24,7 @@
     "bootstrap": "3.3.6",
     "cors": "^2.8.1",
     "jquery": "^3.0.0",
+    "lodash": "^4.17.10",
     "node-sass": "^3.13.0",
     "react": "15.0.2",
     "react-bootstrap": "^0.30.7",
@@ -32,8 +33,10 @@
     "react-redux": "4.4.5",
     "react-router": "2.4.0",
     "react-router-redux": "4.0.4",
+    "react-swipeable": "^4.3.0",
     "redux": "3.5.2",
     "redux-thunk": "2.0.1",
+    "styled-components": "^3.3.0",
     "toastr": "2.1.2"
   },
   "devDependencies": {
