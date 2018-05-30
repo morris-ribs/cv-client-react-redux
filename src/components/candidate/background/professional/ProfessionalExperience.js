@@ -1,7 +1,5 @@
 import React, {PropTypes} from 'react';
 import BackgroundDescription from './BackgroundDescription';
-import Row from 'react-bootstrap/lib/Row';
-import Col from 'react-bootstrap/lib/Col';
 
 class ProfessionalExperience extends React.Component {
     constructor(props, context) {
@@ -11,18 +9,19 @@ class ProfessionalExperience extends React.Component {
     render() {
         const expToDisplay = this.props.exp;
         return (
-            <Row className="basic-border">
-                <Col xs={12}>
-                    <div style={{marginTop:"15px"}}>
-                        <Col xs={12}>
-                            <span className="span-basic thick">{expToDisplay.companyname} @{expToDisplay.location}</span><br />
-                            <span className="span-basic blu">{expToDisplay.period}</span>
-                            <br />
-                            <BackgroundDescription background={expToDisplay} />
-                        </Col>
-                    </div>
-                </Col>
-            </Row>
+            <li
+              className={
+                this.props.index == this.props.activeIndex
+                  ? "carousel__slide carousel__slide--active"
+                  : "carousel__slide"
+              }
+            >
+                <span className="span-basic thick">{expToDisplay.companyname} @{expToDisplay.location}</span><br />
+                <span className="span-basic blu">{expToDisplay.period}</span>
+                
+                <br />
+                <BackgroundDescription background={expToDisplay} />
+            </li>
         );
     }
 }

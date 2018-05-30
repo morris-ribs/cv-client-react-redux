@@ -64,13 +64,24 @@ let DummyData = {
       "experiences": [
         {
           "companyname": "Hello World Ltd",
-          "companydescription": "Hic amisit possem ventus dubium vereor jam ita educta. Quamdiu du acquiri attendo re attendo quomodo. Et me viderentur distinctae intellectu addiscerem. At innatas delusum fuistis emittet sciamus ac quaedam. Chartam mox aut non fas praemia finitus habetur quaenam.       Idque ignem magis capax jam rea nul.",
+          "companydescription": "Hic amisit possem ventus dubium vereor jam ita educta. Idque ignem magis capax jam rea nul.",
           "location": "Here",
           "period": "Since Aug. 2013",
           "projects": [
             {
               "name": "One project",
               "description": "only one"
+            }
+          ]
+        }, {
+          "companyname": "Second One S/A",
+          "companydescription": "Quamdiu du acquiri attendo re attendo quomodo. Et me viderentur distinctae intellectu addiscerem. At innatas delusum fuistis emittet sciamus ac quaedam. Chartam mox aut non fas praemia finitus habetur quaenam.      ",
+          "location": "Here",
+          "period": "Jul. 2012-Aug. 2013",
+          "projects": [
+            {
+              "name": "Project Zero",
+              "description": "Point Zero"
             }
           ]
         }
