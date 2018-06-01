@@ -20,23 +20,36 @@
     margin-bottom: 15px;
 }
 
-.workexp{
+.workexp {
     margin-top: 20px;
     margin-bottom: 25px;
-    text-align: center;
 }
-
+.margin-left-small {
+    margin-left: 5px;
+}
 .column2 {
     margin-left: 15px;
     margin-right: 15px;
 }
+.span-basic-large {
+    font-size: $basicSize + 5pt;
+}
 .span-basic {
     font-size: $basicSize + 2pt;
+}
+.span-basic-1pt {
+    font-size: $basicSize + 1pt;
+}
+.span-basic-small {
+    font-size: $basicSize;
 }
 .thick {
     font-weight: bold;
 }
-.blu{
+.italic {
+    font-style: italic;
+}
+.blu {
     color: blue;
 }
 .span-basic-font-size {
@@ -49,7 +62,7 @@
 .btn {
     font-size: $basicSize;
 }
-.exp{
+.exp {
     margin-top: 30px;
     background-color: $white;
 }
@@ -69,11 +82,11 @@
     }
 }
 
-.presentationborder{
+.presentationborder {
     border-bottom: 1px solid #4783c2;
     margin-bottom: 5pt;
 }
-.divImg{
+.divImg {
     text-align: center;
 }
 .imgSize { 
@@ -86,7 +99,7 @@
 }
 .description{
     margin-top:5px;
-    font-size: 10pt; 
+    font-size: $basicSize + 2pt; 
 }
 .professional-skills{
     font-weight: bold;
@@ -128,16 +141,16 @@
         margin-left: 0;
         margin-right: 30px;
     }
-    .description{
-        margin-top:5px;
-        font-size: 10pt; 
-    }
     .imgPresentation { 
         text-align: left;
         margin: 0;
     }
     .presentationcontent p {
         text-align: left;
+    }
+    .description {
+        margin-top: 5px;
+        font-size: $basicSize;
     }
 }
 
@@ -159,6 +172,7 @@ ul {
 
 .carousel {
   position: relative;
+  margin-top: 15px;
 }
 
 // Carousel slides
@@ -168,7 +182,6 @@ ul {
   display: none;
   max-width: 900px;
   list-style-type: none;
-  text-align: center;
 
   @media (max-width: 991px) {
     padding-right: 60px;
@@ -178,6 +191,10 @@ ul {
   &--active {
     display: block;
   }
+}
+
+.carousel__slides {
+    overflow: hidden;
 }
 
 // Content of slides
@@ -210,6 +227,8 @@ ul {
 .carousel__arrow {
   position: absolute;
   top: 50%;
+  bottom: 0;
+  width: 20%;
   display: block;
   color: #111;
   cursor: pointer;
@@ -227,10 +246,12 @@ ul {
 
   &--left {
     left: 32px;
+    text-align: left;
   }
 
   &--right {
     right: 32px;
+    text-align: center;
   }
 }
 

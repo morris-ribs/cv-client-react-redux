@@ -1,5 +1,9 @@
 import React, {PropTypes} from 'react';
-import BackgroundDescription from './BackgroundDescription';
+import Row from 'react-bootstrap/lib/Row';
+import Col from 'react-bootstrap/lib/Col';
+
+import BackgroundPresentation from '../BackgroundPresentation';
+import Projects from './Projects';
 
 class ProfessionalExperience extends React.Component {
     constructor(props, context) {
@@ -8,6 +12,7 @@ class ProfessionalExperience extends React.Component {
 
     render() {
         const expToDisplay = this.props.exp;
+        const presentation = Object.assign({}, this.props.exp, { title: expToDisplay.companyname, description: expToDisplay.companydescription });
         return (
             <li
               className={
@@ -16,11 +21,12 @@ class ProfessionalExperience extends React.Component {
                   : "carousel__slide"
               }
             >
-                <span className="span-basic thick">{expToDisplay.companyname} @{expToDisplay.location}</span><br />
-                <span className="span-basic blu">{expToDisplay.period}</span>
-                
-                <br />
-                <BackgroundDescription background={expToDisplay} />
+              <BackgroundPresentation presentation={presentation} />
+              <Row>                    
+                <Col xs={12}>                  
+                  <Projects projects={expToDisplay.projects} />
+                </Col>
+              </Row>
             </li>
         );
     }

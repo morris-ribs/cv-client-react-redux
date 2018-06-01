@@ -1,42 +1,41 @@
 import React, {PropTypes} from 'react';
 import { Row, Col } from 'react-bootstrap';
+import BackgroundPresentation from '../BackgroundPresentation';
 
 class Degree extends React.Component {
     constructor(props, context) {
-        super(props, context);
-        this.state = {
-          isHidden: true
-        };
+      super(props, context);
+      this.state = {
+        isHidden: true
+      };
 
-        // This binding is necessary to make `this` work in the callback
-        this.handleClick = this.handleClick.bind(this);
+      // This binding is necessary to make `this` work in the callback
+      this.handleClick = this.handleClick.bind(this);
     }
     
     handleClick() {
-        this.setState(prevState => ({
-            isHidden: !prevState.isHidden
-        }));
+      this.setState(prevState => ({
+        isHidden: !prevState.isHidden
+      }));
     }    
     
     render() {
-        const degreeToDisplay = this.props.degree;
-        const isHidden = this.state.isHidden;
+      const degreeToDisplay = { 
+        title: this.props.degree.degree, 
+        period: this.props.degree.period,
+        location: this.props.degree.schoolname + ", " + this.props.degree.location,
+        description: this.props.degree.description
+      };
+      const isHidden = this.state.isHidden;
+      
 
-        return(
-            <Row>
-                <Col xs={12}>
-                    <div style={{marginTop:"15px"}}>
-                        <span className="span-basic thick">{degreeToDisplay.degree} @{degreeToDisplay.schoolname}, {degreeToDisplay.location}</span>
-                        <br />
-                        <span className="span-basic blu">{degreeToDisplay.period}</span>
-                        <br />							 
-                        <div className="description">
-                            <p>{degreeToDisplay.description}</p>
-                        </div>
-                    </div>                            
-                </Col>
-            </Row>
-        );
+      return(
+        <Row>
+          <Col xs={12}>
+              <BackgroundPresentation presentation={degreeToDisplay} />                           
+          </Col>
+        </Row>
+      );
     }
 }
 

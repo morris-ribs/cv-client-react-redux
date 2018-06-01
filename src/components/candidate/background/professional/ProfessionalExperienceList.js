@@ -79,7 +79,7 @@ class ProfessionalExperienceList extends React.Component {
                             <Col xs={12}>
                                 <div className="carousel">
                                     <CarouselLeftArrow onClick={e => this.goToPrevSlide(e)} />
-                            
+                                    
                                     <ul className="carousel__slides">
                                         {this.props.exps.map((exp, index) =>
                                             <ProfessionalExperience
@@ -90,9 +90,9 @@ class ProfessionalExperienceList extends React.Component {
                                             />
                                         )}
                                     </ul>
-                            
+                                    
                                     <CarouselRightArrow onClick={e => this.goToNextSlide(e)} />
-                            
+                                    
                                     <ul className="carousel__indicators">
                                         {this.props.exps.map((exp, index) =>
                                         <CarouselIndicator
