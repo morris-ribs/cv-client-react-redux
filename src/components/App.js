@@ -5,17 +5,17 @@ import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
 
 class App extends React.Component {
-    render() {
-        return(
-            <Grid fluid>
-                {this.props.children}
-            </Grid>
-        );
-    }
+  render() {
+    return(
+      <Grid fluid>
+        {this.props.children}
+      </Grid>
+    );
+  }
 }
 
 App.propTypes = {
-    children: PropTypes.object.isRequired
+  children: PropTypes.object.isRequired
 };
 
 export default App;
