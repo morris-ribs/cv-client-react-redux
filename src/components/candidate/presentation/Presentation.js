@@ -33,6 +33,7 @@ class Presentation extends React.Component {
                             </Col>
                             <Col xs={12} sm={11} md={9}>
                                 <p>{candidateToDisplay.presentation}</p>
+                                <p><a href={candidateToDisplay.blog}>My blog in Medium</a></p>
                             </Col>
                         </Row>
                     </div>
