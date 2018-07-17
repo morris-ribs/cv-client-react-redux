@@ -1,5 +1,4 @@
 import React, {PropTypes} from 'react';
-import {connect} from 'react-redux';
 import { Row, Col } from 'react-bootstrap';
 import MdWork from 'react-icons/lib/md/work';
 

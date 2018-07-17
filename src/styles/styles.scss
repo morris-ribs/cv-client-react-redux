@@ -66,12 +66,12 @@
     margin-top: 30px;
     background-color: $white;
 }
-.presentationcol{
+.presentationcol {
     margin-top: 30px;
     background-color: $backColorPres;
     color: $white;
 }
-.presentationcontent{
+.presentationcontent {
     margin-top: 20px;
     margin-left: 15px;
     margin-right: 15px;    
@@ -97,11 +97,11 @@
     text-align: center;
     margin-bottom: 2pt;
 }
-.description{
+.description {
     margin-top:5px;
     font-size: $basicSize + 2pt; 
 }
-.professional-skills{
+.professional-skills {
     font-weight: bold;
     margin-top: 20px;
     font-size: 12pt; 
@@ -221,6 +221,13 @@ ul {
 .carousel-slide__source {
   font-style: italic;
   color: #888;
+}
+
+.photo {
+    border-radius: 49%;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
 }
 
 // Carousel arrows

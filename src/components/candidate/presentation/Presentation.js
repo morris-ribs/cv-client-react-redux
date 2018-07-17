@@ -22,7 +22,14 @@ class Presentation extends React.Component {
             <Row>
                 <Col xs={12}>
                     <div className="presentationcontent">
-                        <p className="exph2">{candidateToDisplay.name}</p>
+                        <Row>
+                            <Col xs={8}>
+                                <p className="exph2">{candidateToDisplay.name}</p>
+                            </Col>
+                            <Col xs={4}>
+                                <img className="photo" src={require(`../../../img/business-man.png`)} />
+                            </Col>
+                        </Row>
                     </div>
                     <div className="presentationcontent">
                         <Row>
