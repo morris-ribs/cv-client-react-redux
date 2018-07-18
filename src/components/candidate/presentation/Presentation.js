@@ -18,6 +18,7 @@ class Presentation extends React.Component {
 
     render() {
         const candidateToDisplay = this.props.candidate;
+        const pathToImage = (candidateToDisplay.picture || "blank-img.png");
         return (
             <Row>
                 <Col xs={12}>
@@ -27,7 +28,7 @@ class Presentation extends React.Component {
                                 <p className="exph2">{candidateToDisplay.name}</p>
                             </Col>
                             <Col xs={4}>
-                                <img className="photo" src={require(`../../../img/business-man.png`)} />
+                                <img className="photo" src={require(`../../../img/${pathToImage}`)} />
                             </Col>
                         </Row>
                     </div>
