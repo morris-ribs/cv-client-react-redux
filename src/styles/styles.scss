@@ -201,8 +201,8 @@ ul {
     height: auto;
     width: auto;
   }
-  transition: transform .15s cubic-bezier(.4, 0, 1, 1);
-  transition: all .35s cubic-bezier(.4, 0, 1, 1);
+
+  transition: all .5s linear;
 }
 
 .carousel__slides {
