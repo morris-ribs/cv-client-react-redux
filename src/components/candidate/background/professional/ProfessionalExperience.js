@@ -14,20 +14,21 @@ class ProfessionalExperience extends React.Component {
         const expToDisplay = this.props.exp;
         const presentation = Object.assign({}, this.props.exp, { title: expToDisplay.companyname, description: expToDisplay.companydescription });
         return (
-            <li
-              className={
+            <div
+                className={
                 this.props.index == this.props.activeIndex
-                  ? "carousel__slide carousel__slide--active"
-                  : "carousel__slide"
-              }
-            >
-              <BackgroundPresentation presentation={presentation} />
-              <Row>                    
-                <Col xs={12}>                  
-                  <Projects projects={expToDisplay.projects} />
-                </Col>
-              </Row>
-            </li>
+                    ? "carousel__slide carousel__slide--active"
+                    : "carousel__slide carousel__slide--inactive"
+                }>
+                <li>
+                    <BackgroundPresentation presentation={presentation} />
+                    <Row>                    
+                        <Col xs={12}>                  
+                        <Projects projects={expToDisplay.projects} />
+                        </Col>
+                    </Row>
+                </li>
+            </div>
         );
     }
 }
