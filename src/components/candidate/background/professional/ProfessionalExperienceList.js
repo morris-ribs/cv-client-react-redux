@@ -64,6 +64,9 @@ class ProfessionalExperienceList extends React.Component {
     }
 
     render() {
+        const leftArrow = (this.state.activeIndex > 0) ? <CarouselLeftArrow onClick={e => this.goToPrevSlide(e)} /> : "";
+        const rightArrow = (this.state.activeIndex < (this.props.exps.length - 1)) ? 
+            <CarouselRightArrow onClick={e => this.goToNextSlide(e)} /> : "";
         return (
             <Row className="exp">
                 <Col xs={12}>
@@ -77,7 +80,7 @@ class ProfessionalExperienceList extends React.Component {
                         <Row className="basic-border">
                             <Col xs={12}>
                                 <div className="carousel">
-                                    <CarouselLeftArrow onClick={e => this.goToPrevSlide(e)} />
+                                    {leftArrow}
                                     
                                     <ul className="carousel__slides">
                                         {this.props.exps.map((exp, index) =>
@@ -90,7 +93,7 @@ class ProfessionalExperienceList extends React.Component {
                                         )}
                                     </ul>
                                     
-                                    <CarouselRightArrow onClick={e => this.goToNextSlide(e)} />
+                                    {rightArrow}
                                     
                                     <ul className="carousel__indicators">
                                         {this.props.exps.map((exp, index) =>

@@ -25,7 +25,7 @@ class Presentation extends React.Component {
                     <div className="presentationcontent">
                         <Row>
                             <Col xs={8}>
-                                <p className="exph2">{candidateToDisplay.name}</p>
+                                <p className="exph2 presentation-name">{candidateToDisplay.name}</p>
                             </Col>
                             <Col xs={4}>
                                 <img className="photo" src={require(`../../../img/${pathToImage}`)} />
