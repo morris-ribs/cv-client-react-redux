@@ -7,7 +7,6 @@ import DegreeList from './background/educational/DegreeList';
 import Languages from './languages/Languages';
 import {loadCandidate} from '../../actions/candidateActions';
 
-import Grid from 'react-bootstrap/lib/Grid';
 import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
 
@@ -22,11 +21,9 @@ class CandidatePage extends React.Component {
   }
 
   componentDidMount() {
-    if (!!this.props.params && !!this.props.params.candidateId) {
-      console.log("dispatching " + this.props.params.candidateId);
-      this.props.dispatch(loadCandidate(this.props.params.candidateId));
+    if (!!this.props.match && !!this.props.match.params && !!this.props.match.params.candidateId) {
+      this.props.dispatch(loadCandidate(this.props.match.params.candidateId));
     } else {
-      console.log("dispatching default candidate");
       this.props.dispatch(loadCandidate(""));
     }
   }

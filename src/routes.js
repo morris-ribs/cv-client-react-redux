@@ -1,12 +1,12 @@
 import React from 'react';
-import {Route, IndexRoute} from 'react-router';
+import {Route} from 'react-router';
+import {Switch} from 'react-router-dom';
 
-import App from './components/App';
 import CandidatePage from './components/candidate/CandidatePage';
 
 export default (
-  <Route path="/" component={App}>
-    <IndexRoute component={CandidatePage} />
-    <Route path="/:candidateId" component={CandidatePage} />
-  </Route>
+  <Switch>
+    <Route exact path='/' component={CandidatePage} />
+    <Route path='/:candidateId' component={CandidatePage} />
+  </Switch>
 );
