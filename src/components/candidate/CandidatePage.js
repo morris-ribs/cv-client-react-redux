@@ -1,15 +1,14 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 
+import Row from 'react-bootstrap/lib/Row';
+import Col from 'react-bootstrap/lib/Col';
+
 import Presentation from './presentation/Presentation';
 import ProfessionalExperienceList from './background/professional/ProfessionalExperienceList';
 import DegreeList from './background/educational/DegreeList';
 import Languages from './languages/Languages';
 import {loadCandidate} from '../../actions/candidateActions';
-
-import Row from 'react-bootstrap/lib/Row';
-import Col from 'react-bootstrap/lib/Col';
-
 
 class CandidatePage extends React.Component {
   constructor(props, context) {    
@@ -31,7 +30,7 @@ class CandidatePage extends React.Component {
   render() {
     const candidateToDisplay = this.props.candidate;
     return (
-      <Row>
+      <Row style={{margin:"0px"}}>    
         <Col xs={12} md={3}> 
           <div className="presentationcol"> 
             <Presentation candidate={candidateToDisplay} />
