@@ -1,9 +1,10 @@
 import React from 'react';
-import { StaticRouter } from 'react-router';
+import { StaticRouter, RouterContext } from 'react-router';
 import ReactDOMServer from 'react-dom/server';
 import { renderRoutes, matchRoutes } from "react-router-config";
 import {Provider} from 'react-redux';
 import express from 'express';
+import Helmet from 'react-helmet';
 
 import configureStoreServer from './store/configureStoreServer';
 import {routes} from './routes';
@@ -44,8 +45,9 @@ app.get('/:candidateId', function(req, res) {
           { renderRoutes(routes) }
         </StaticRouter>
       </Provider>
-    )
+    );
  
+    const helmet = Helmet.renderStatic();
     const serializedState = JSON.stringify(store.getState());
     return res.send(         
       `<!DOCTYPE html>
@@ -55,6 +57,7 @@ app.get('/:candidateId', function(req, res) {
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <meta charset="utf-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            ${helmet.meta.toString()}
             <link href="https://fonts.googleapis.com/css?family=Roboto">
             <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         </head>
