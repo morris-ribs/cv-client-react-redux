@@ -23,7 +23,7 @@ class CandidatePage extends React.Component {
     if (!!this.props.match && !!this.props.match.params && !!this.props.match.params.candidateId) {
       this.props.dispatch(loadCandidate(this.props.match.params.candidateId));
     } else {
-      this.props.dispatch(loadCandidate(""));
+      this.props.dispatch(loadCandidate("johndoe"));
     }
   }
     

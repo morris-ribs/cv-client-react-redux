@@ -1,10 +1,11 @@
 {
   "name": "cvclient",
   "version": "1.0.0",
-  "description": "Client app to display the REsume of a candidate",
+  "description": "Client app to display the Resume of a candidate",
   "scripts": {
-    "prestart": "babel-node tools/startMessage.js",
-    "start": "npm-run-all --parallel open:src lint:watch server:start",
+    "prestart": "babel-node tools/startMessage.js && npm install",
+    "start": "npm run build-everything && node build/bundle.js",
+    "heroku-postbuild": "npm run build-client",
     "open:src": "babel-node tools/srcServer.js",
     "lint": "node_modules/.bin/esw webpack.config.* src tools",
     "lint:watch": "npm run lint --watch",
@@ -14,7 +15,11 @@
     "build:html": "babel-node tools/buildHtml.js",
     "prebuild": "npm-run-all clean-dist lint build:html",
     "build": "babel-node tools/build.js",
-    "postbuild": "babel-node tools/distServer.js"
+    "postbuild": "babel-node tools/distServer.js",
+    "build-server": "webpack --config webpack.server.js",
+    "build-client": "webpack --config webpack.client.js",
+    "build-everything": "npm-run-all --parallel build-server build-client",
+    "run-it": "npm run build-everything && node build/bundle.js"
   },
   "main": "index.js",
   "author": "Mauricio Ribeiro",
@@ -24,7 +29,9 @@
     "bootstrap": "3.3.6",
     "connected-react-router": "^4.3.0",
     "cors": "^2.8.1",
+    "es6-promise": "^4.2.4",
     "history": "^4.7.2",
+    "isomorphic-fetch": "^2.2.1",
     "jquery": "^3.0.0",
     "lodash": "^4.17.10",
     "node-sass": "^4.9.2",
@@ -34,13 +41,19 @@
     "react-icons": "^2.2.1",
     "react-redux": "4.4.5",
     "react-router": "^4.3.1",
+    "react-router-config": "^1.0.0-beta.4",
     "react-router-dom": "^4.3.1",
     "react-router-redux": "4.0.4",
     "react-swipeable": "^4.3.0",
     "redux": "3.5.2",
     "redux-thunk": "2.0.1",
     "styled-components": "^3.3.0",
-    "toastr": "2.1.2"
+    "react-addons-test-utils": "15.0.2",
+    "redux-immutable-state-invariant": "1.2.3",
+    "redux-mock-store": "1.0.2",
+    "toastr": "2.1.2",
+    "webpack-node-externals": "^1.7.2",
+    "express": "^4.14.0"
   },
   "devDependencies": {
     "babel-cli": "6.8.0",
@@ -63,7 +76,6 @@
     "eslint-watch": "2.1.11",
     "eventsource-polyfill": "0.9.6",
     "expect": "1.19.0",
-    "express": "^4.14.0",
     "extract-text-webpack-plugin": "1.0.1",
     "file-loader": "^0.8.5",
     "jsdom": "8.5.0",
@@ -71,15 +83,16 @@
     "nock": "8.0.0",
     "npm-run-all": "1.8.0",
     "open": "0.0.5",
-    "react-addons-test-utils": "15.0.2",
-    "redux-immutable-state-invariant": "1.2.3",
-    "redux-mock-store": "1.0.2",
     "rimraf": "2.5.2",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "1.13.0",
     "webpack-dev-middleware": "1.6.1",
-    "webpack-hot-middleware": "2.10.0"
+    "webpack-hot-middleware": "2.10.0",
+    "webpack-merge": "^4.1.4"
+  },
+  "engines": {
+    "node": "^8.11.3"
   }
 }

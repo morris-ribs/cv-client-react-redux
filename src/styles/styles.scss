@@ -6,10 +6,6 @@
     background-color: $backColor;
 }
 
-.no-margin {
-    margin: 0px;
-}
-
 .exph2 {    
     font-size: $basicSize + 10pt;
     margin: 0px;
@@ -55,6 +51,9 @@
 }
 .blu {
     color: blue;
+}
+.color-white {
+    color: $white;
 }
 .span-basic-font-size {
     font-size: $basicSize;
@@ -249,6 +248,10 @@ ul {
 .presentation-name {
     margin: 0;
     padding-top: 15px;
+}
+
+.cursor-pointer {    
+  cursor: pointer;
 }
 
 // Carousel arrows

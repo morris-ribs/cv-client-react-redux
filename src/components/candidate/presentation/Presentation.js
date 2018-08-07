@@ -3,8 +3,9 @@ import Skills from './Skills';
 import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
 import FaAt from 'react-icons/lib/fa/at';
-import FaPhone from 'react-icons/lib/fa/phone';
 import FaHome from 'react-icons/lib/fa/home';
+import FaMedium from 'react-icons/lib/fa/medium';
+import FaPhone from 'react-icons/lib/fa/phone';
 import FaUser from 'react-icons/lib/fa/user';
 
 class Presentation extends React.Component {
@@ -18,7 +19,8 @@ class Presentation extends React.Component {
 
     render() {
         const candidateToDisplay = this.props.candidate;
-        const pathToImage = (candidateToDisplay.picture || "blank-img.png");
+        const pathToImage = "https://res.cloudinary.com/dhuwmlfir/image/upload/" + (candidateToDisplay.picture || "v1533553527/local/blank-img.png");
+        const mailTo = "mailto:" + candidateToDisplay.email;
         return (
             <Row>
                 <Col xs={12}>
@@ -28,7 +30,7 @@ class Presentation extends React.Component {
                                 <p className="exph2 presentation-name">{candidateToDisplay.name}</p>
                             </Col>
                             <Col xs={4}>
-                                <img className="photo" src={require(`../../../img/${pathToImage}`)} />
+                               <img className="photo" src={pathToImage} />
                             </Col>
                         </Row>
                     </div>
@@ -41,7 +43,18 @@ class Presentation extends React.Component {
                             </Col>
                             <Col xs={12} sm={11} md={9}>
                                 <p>{candidateToDisplay.presentation}</p>
-                                <p><a href={candidateToDisplay.blog}>My blog in Medium</a></p>
+                            </Col>
+                        </Row>
+                    </div>
+                    <div className="presentationcontent">
+                        <Row>
+                            <Col xs={12} sm={1} md={3}>
+                                <div className="divImg">
+                                    <FaMedium className="imgPresentation" />
+                                </div>
+                            </Col>
+                            <Col xs={12} sm={11} md={9}>
+                                <p className="cursor-pointer"><a target="blank" className="color-white" href={candidateToDisplay.blog}>{candidateToDisplay.blog}</a></p>
                             </Col>
                         </Row>
                     </div>
@@ -65,7 +78,7 @@ class Presentation extends React.Component {
                                 </div>
                             </Col>
                             <Col xs={12} sm={11} md={9}>
-                                <p>{candidateToDisplay.email}</p>
+                                <p className="cursor-pointer"><a className="color-white" href={mailTo}>{candidateToDisplay.email}</a></p>
                             </Col>
                         </Row>
                     </div>

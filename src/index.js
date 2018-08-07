@@ -1,26 +1,77 @@
-/*eslint-disable import/default */ 
-import 'babel-polyfill';
 import React from 'react';
-import {render} from 'react-dom';
+import { StaticRouter } from 'react-router';
+import ReactDOMServer from 'react-dom/server';
+import { renderRoutes, matchRoutes } from "react-router-config";
 import {Provider} from 'react-redux';
-import { createBrowserHistory } from 'history';
-import { ConnectedRouter } from 'connected-react-router';
+import express from 'express';
 
-import './styles/styles.scss';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import configureStoreServer from './store/configureStoreServer';
+import {routes} from './routes';
 
-import configureStore from './store/configureStore';
-import routes from './routes';
+/* eslint-disable no-console */
 
+const port = 8900;
+const app = express();
 
-const history = createBrowserHistory();
-const store = configureStore();
+app.get('/__webpack_hmr', function(req, res) {
+  return "nothing";
+});
 
-render(
-  <Provider store={store}>
-    <ConnectedRouter history={history}>
-      {routes}
-    </ConnectedRouter>
-  </Provider>,
-  document.getElementById('app')
-);
+app.use(express.static('public'));
+app.use(express.static('build'));
+app.use(express.static('dist'));
+
+// SSR
+app.get('/:candidateId', function(req, res) {
+  const store = configureStoreServer(); // Setup store with reducers, etc
+  const { url } = req;
+  const context = {};
+  // For each route that matches
+  const promises = matchRoutes(routes, url).map(({route, match}) => {
+    // Load the data for that route. Include match information
+    // so route parameters can be passed through.
+    if (route.loadData != null)
+      return store.dispatch(route.loadData(match));
+  });
+ 
+  // Wait for all the data to load
+  Promise.all(promises).then(() => {
+    // Now render the component hierarchy using the store, 
+    // include the routes
+    const content = ReactDOMServer.renderToString( 
+      <Provider store={store}>
+        <StaticRouter location={url} context={context}>
+          { renderRoutes(routes) }
+        </StaticRouter>
+      </Provider>
+    )
+ 
+    const serializedState = JSON.stringify(store.getState());
+    return res.send(         
+      `<!DOCTYPE html>
+      <html lang="en">
+        <head><link rel="stylesheet" href="styles.css">
+          <title>My CV</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <link href="https://fonts.googleapis.com/css?family=Roboto">
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        </head>
+        <body>
+          <div id="app">${content}</div>
+          <script src="/bundle.js"></script>
+          <script>
+            window.__PRELOADED_STATE__ = ${serializedState}
+          </script>
+        </body>
+      </html>`
+    );
+  }).catch((reason) => {console.log ("Error: " + reason);}); 
+});
+
+app.listen(process.env.PORT || port, function(err) {
+  if (err) {
+    console.log(err);
+  }
+});

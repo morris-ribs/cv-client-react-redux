@@ -1,12 +1,10 @@
-import React from 'react';
-import {Route} from 'react-router';
-import {Switch} from 'react-router-dom';
-
 import CandidatePage from './components/candidate/CandidatePage';
+import {loadCandidate} from './actions/candidateActions';
 
-export default (
-  <Switch>
-    <Route exact path='/' component={CandidatePage} />
-    <Route path='/:candidateId' component={CandidatePage} />
-  </Switch>
-);
+
+export const routes = [  
+  { path: '/:candidateId',
+    component: CandidatePage,
+    loadData: (candidateId) => loadCandidate(candidateId)
+  }
+];
