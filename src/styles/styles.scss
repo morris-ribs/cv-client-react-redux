@@ -85,6 +85,14 @@
     }
 }
 
+.blog-link {
+    padding-bottom: 15px;
+    text-align: center !important;
+    svg {
+        font-size: $basicSize + 10pt !important; 
+    }
+}
+
 .presentationborder {
     border-bottom: 1px solid #4783c2;
     margin-bottom: 5pt;

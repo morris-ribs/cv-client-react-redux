@@ -8,7 +8,7 @@ const config = {
     entry: './src/index.js',
     externals: [nodeExternals()], // Don't bundle .js files from node_modules
     output: {
-        filename: 'bundle.js',
+        filename: 'server-bundle.js',
         path: path.resolve(__dirname, "build")
     }
 };

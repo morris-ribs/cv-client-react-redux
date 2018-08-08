@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "description": "Client app to display the Resume of a candidate",
   "scripts": {
-    "prestart": "babel-node tools/startMessage.js && npm install",
-    "start": "npm run build-everything && node build/bundle.js",
-    "heroku-postbuild": "npm run build-client",
+    "prestart": "babel-node tools/startMessage.js && npm install && npm run build-server",
+    "start": "npm run build-everything && node build/server-bundle.js",
     "open:src": "babel-node tools/srcServer.js",
     "lint": "node_modules/.bin/esw webpack.config.* src tools",
     "lint:watch": "npm run lint --watch",
@@ -19,7 +18,7 @@
     "build-server": "webpack --config webpack.server.js",
     "build-client": "webpack --config webpack.client.js",
     "build-everything": "npm-run-all --parallel build-server build-client",
-    "run-it": "npm run build-everything && node build/bundle.js"
+    "run-it": "npm run build-everything && node build/server-bundle.js"
   },
   "main": "index.js",
   "author": "Mauricio Ribeiro",

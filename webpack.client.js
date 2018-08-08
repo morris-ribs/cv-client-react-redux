@@ -6,7 +6,7 @@ const config = {
     target: 'web',
     entry: './src/client.js',
     output: {
-        filename: 'bundle.js',
+        filename: 'bundleLatest.js',
         path: path.resolve(__dirname, "dist")
     }
 };

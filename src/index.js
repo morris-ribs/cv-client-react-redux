@@ -1,5 +1,5 @@
 import React from 'react';
-import { StaticRouter, RouterContext } from 'react-router';
+import { StaticRouter } from 'react-router';
 import ReactDOMServer from 'react-dom/server';
 import { renderRoutes, matchRoutes } from "react-router-config";
 import {Provider} from 'react-redux';
@@ -11,7 +11,7 @@ import {routes} from './routes';
 
 /* eslint-disable no-console */
 
-const port = 8900;
+const port = 8800;
 const app = express();
 
 app.get('/__webpack_hmr', function(req, res) {
@@ -19,7 +19,7 @@ app.get('/__webpack_hmr', function(req, res) {
 });
 
 app.use(express.static('public'));
-app.use(express.static('build'));
+//app.use(express.static('build'));
 app.use(express.static('dist'));
 
 // SSR
@@ -63,7 +63,7 @@ app.get('/:candidateId', function(req, res) {
         </head>
         <body>
           <div id="app">${content}</div>
-          <script src="/bundle.js"></script>
+          <script src="/bundleLatest.js"></script>
           <script>
             window.__PRELOADED_STATE__ = ${serializedState}
           </script>
