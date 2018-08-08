@@ -217,7 +217,9 @@ ul {
 }
 
 .carousel__slides {
-    overflow: hidden;
+    overflow: hidden;    
+    padding-left: 70px;
+    padding-right: 150px;
 }
 
 // Content of slides
