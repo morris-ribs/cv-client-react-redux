@@ -326,7 +326,7 @@
 
 	var _CandidatePage2 = _interopRequireDefault(_CandidatePage);
 
-	var _candidateActions = __webpack_require__(48);
+	var _candidateActions = __webpack_require__(52);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -367,19 +367,19 @@
 
 	var _Presentation2 = _interopRequireDefault(_Presentation);
 
-	var _ProfessionalExperienceList = __webpack_require__(32);
+	var _ProfessionalExperienceList = __webpack_require__(33);
 
 	var _ProfessionalExperienceList2 = _interopRequireDefault(_ProfessionalExperienceList);
 
-	var _DegreeList = __webpack_require__(42);
+	var _DegreeList = __webpack_require__(46);
 
 	var _DegreeList2 = _interopRequireDefault(_DegreeList);
 
-	var _Languages = __webpack_require__(45);
+	var _Languages = __webpack_require__(49);
 
 	var _Languages2 = _interopRequireDefault(_Languages);
 
-	var _candidateActions = __webpack_require__(48);
+	var _candidateActions = __webpack_require__(52);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -881,13 +881,13 @@
 
 	var _Col2 = _interopRequireDefault(_Col);
 
-	var _ProgressBar = __webpack_require__(30);
-
-	var _ProgressBar2 = _interopRequireDefault(_ProgressBar);
-
-	var _calendarCheckO = __webpack_require__(31);
+	var _calendarCheckO = __webpack_require__(30);
 
 	var _calendarCheckO2 = _interopRequireDefault(_calendarCheckO);
+
+	var _Technology = __webpack_require__(31);
+
+	var _Technology2 = _interopRequireDefault(_Technology);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -921,18 +921,21 @@
 	            _react2.default.createElement(
 	                _Col2.default,
 	                { xs: 12 },
-	                skills != null ? skills.map(function (skill) {
+	                skills != null ? skills.map(function (skill, index) {
 	                    return _react2.default.createElement(
 	                        'div',
-	                        { style: { marginTop: "10pt", marginLeft: "5pt", marginRight: "5pt" }, key: skill.name },
-	                        skill.name,
-	                        ' ',
-	                        _react2.default.createElement('br', null),
+	                        { style: { marginTop: "10pt", marginLeft: "5pt", marginRight: "5pt" }, key: index },
 	                        _react2.default.createElement(
-	                            'div',
-	                            { className: 'progressSkill' },
-	                            _react2.default.createElement(_ProgressBar2.default, { style: { height: "10px" }, bsStyle: 'info', active: true, now: parseInt(skill.level) })
-	                        )
+	                            'p',
+	                            { className: 'thick' },
+	                            ' > ',
+	                            skill.name,
+	                            ' ',
+	                            _react2.default.createElement('br', null)
+	                        ),
+	                        skill.technologies.map(function (technology, indexTech) {
+	                            return _react2.default.createElement(_Technology2.default, { key: indexTech, tech: technology, index: index });
+	                        })
 	                    );
 	                }) : []
 	            )
@@ -950,16 +953,72 @@
 /* 30 */
 /***/ function(module, exports) {
 
-	module.exports = require("react-bootstrap/lib/ProgressBar");
-
-/***/ },
-/* 31 */
-/***/ function(module, exports) {
-
 	module.exports = require("react-icons/lib/fa/calendar-check-o");
 
 /***/ },
+/* 31 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _ProgressBar = __webpack_require__(32);
+
+	var _ProgressBar2 = _interopRequireDefault(_ProgressBar);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Technology = function Technology(_ref) {
+	    var tech = _ref.tech,
+	        index = _ref.index;
+
+	    var style = "info";
+	    switch (index % 4) {
+	        case 0:
+	            style = "success";break;
+	        case 1:
+	            style = "danger";break;
+	        case 2:
+	            style = "warning";break;
+	        default:
+	            style = "info";
+	    }
+
+	    return _react2.default.createElement(
+	        'div',
+	        { style: { marginTop: "10pt", marginLeft: "5pt", marginRight: "5pt" }, key: tech.name },
+	        tech.name,
+	        ' ',
+	        _react2.default.createElement('br', null),
+	        _react2.default.createElement(
+	            'div',
+	            { className: 'progressSkill' },
+	            _react2.default.createElement(_ProgressBar2.default, { style: { height: "10px" }, bsStyle: style, active: true, now: parseInt(tech.level) })
+	        )
+	    );
+	};
+
+	Technology.propTypes = {
+	    tech: _react.PropTypes.object.isRequired
+	};
+
+	exports.default = Technology;
+
+/***/ },
 /* 32 */
+/***/ function(module, exports) {
+
+	module.exports = require("react-bootstrap/lib/ProgressBar");
+
+/***/ },
+/* 33 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -974,29 +1033,29 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _propTypes = __webpack_require__(33);
+	var _propTypes = __webpack_require__(34);
 
 	var _propTypes2 = _interopRequireDefault(_propTypes);
 
-	var _reactBootstrap = __webpack_require__(34);
+	var _reactBootstrap = __webpack_require__(35);
 
-	var _work = __webpack_require__(35);
+	var _work = __webpack_require__(36);
 
 	var _work2 = _interopRequireDefault(_work);
 
-	var _CarouselIndicator = __webpack_require__(36);
+	var _CarouselIndicator = __webpack_require__(37);
 
 	var _CarouselIndicator2 = _interopRequireDefault(_CarouselIndicator);
 
-	var _CarouselLeftArrow = __webpack_require__(37);
+	var _CarouselLeftArrow = __webpack_require__(38);
 
 	var _CarouselLeftArrow2 = _interopRequireDefault(_CarouselLeftArrow);
 
-	var _CarouselRightArrow = __webpack_require__(38);
+	var _CarouselRightArrow = __webpack_require__(39);
 
 	var _CarouselRightArrow2 = _interopRequireDefault(_CarouselRightArrow);
 
-	var _ProfessionalExperience = __webpack_require__(39);
+	var _ProfessionalExperience = __webpack_require__(40);
 
 	var _ProfessionalExperience2 = _interopRequireDefault(_ProfessionalExperience);
 
@@ -1169,25 +1228,25 @@
 	exports.default = ProfessionalExperienceList;
 
 /***/ },
-/* 33 */
+/* 34 */
 /***/ function(module, exports) {
 
 	module.exports = require("prop-types");
 
 /***/ },
-/* 34 */
+/* 35 */
 /***/ function(module, exports) {
 
 	module.exports = require("react-bootstrap");
 
 /***/ },
-/* 35 */
+/* 36 */
 /***/ function(module, exports) {
 
 	module.exports = require("react-icons/lib/md/work");
 
 /***/ },
-/* 36 */
+/* 37 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1239,7 +1298,7 @@
 	exports.default = CarouselIndicator;
 
 /***/ },
-/* 37 */
+/* 38 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1292,7 +1351,7 @@
 	exports.default = CarouselLeftArrow;
 
 /***/ },
-/* 38 */
+/* 39 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1345,7 +1404,7 @@
 	exports.default = CarouselRightArrow;
 
 /***/ },
-/* 39 */
+/* 40 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1360,7 +1419,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _propTypes = __webpack_require__(33);
+	var _propTypes = __webpack_require__(34);
 
 	var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -1372,11 +1431,11 @@
 
 	var _Col2 = _interopRequireDefault(_Col);
 
-	var _BackgroundPresentation = __webpack_require__(40);
+	var _BackgroundPresentation = __webpack_require__(41);
 
 	var _BackgroundPresentation2 = _interopRequireDefault(_BackgroundPresentation);
 
-	var _Projects = __webpack_require__(41);
+	var _Projects = __webpack_require__(42);
 
 	var _Projects2 = _interopRequireDefault(_Projects);
 
@@ -1434,7 +1493,7 @@
 	exports.default = ProfessionalExperience;
 
 /***/ },
-/* 40 */
+/* 41 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1449,7 +1508,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _propTypes = __webpack_require__(33);
+	var _propTypes = __webpack_require__(34);
 
 	var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -1518,20 +1577,24 @@
 	exports.default = BackgroundPresentation;
 
 /***/ },
-/* 41 */
+/* 42 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+	  value: true
 	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _propTypes = __webpack_require__(33);
+	var _reactRedux = __webpack_require__(5);
+
+	var _propTypes = __webpack_require__(34);
 
 	var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -1543,59 +1606,206 @@
 
 	var _Col2 = _interopRequireDefault(_Col);
 
+	var _Button = __webpack_require__(43);
+
+	var _Button2 = _interopRequireDefault(_Button);
+
+	var _ProjectModal = __webpack_require__(44);
+
+	var _ProjectModal2 = _interopRequireDefault(_ProjectModal);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var Projects = function Projects(_ref) {
-	    var projects = _ref.projects;
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	    return _react2.default.createElement(
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Projects = function (_React$Component) {
+	  _inherits(Projects, _React$Component);
+
+	  function Projects(props, context) {
+	    _classCallCheck(this, Projects);
+
+	    var _this = _possibleConstructorReturn(this, (Projects.__proto__ || Object.getPrototypeOf(Projects)).call(this, props, context));
+
+	    var modalShow = {};
+	    _this.props.projects.map(function (project) {
+	      modalShow[project.name] = false;
+	    });
+
+	    _this.state = {
+	      projects: Object.assign({}, _this.props.projects),
+	      modalShow: modalShow
+	    };
+	    return _this;
+	  }
+
+	  _createClass(Projects, [{
+	    key: 'render',
+	    value: function render() {
+	      var _this2 = this;
+
+	      var projects = this.props.projects;
+	      var modalShow = this.state.modalShow;
+	      var setModalShow = function setModalShow(projectName, newModalShow) {
+	        modalShow[projectName] = newModalShow;
+	        _this2.setState({ modalShow: modalShow });
+	      };
+
+	      console.log(modalShow);
+	      return _react2.default.createElement(
 	        _Row2.default,
 	        null,
 	        _react2.default.createElement(
-	            _Col2.default,
-	            { xs: 12 },
+	          _Col2.default,
+	          { xs: 12 },
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'span-basic thick' },
+	            'Projects'
+	          ),
+	          _react2.default.createElement(
+	            _Row2.default,
+	            null,
 	            _react2.default.createElement(
-	                'span',
-	                { className: 'span-basic thick' },
-	                'Projects'
-	            ),
-	            _react2.default.createElement(
-	                _Row2.default,
-	                null,
-	                _react2.default.createElement(
-	                    _Col2.default,
-	                    { xs: 12 },
-	                    projects.map(function (project) {
-	                        return _react2.default.createElement(
-	                            'div',
-	                            { key: project.name },
-	                            _react2.default.createElement(
-	                                'span',
-	                                { className: 'span-basic-font-size' },
-	                                project.name
-	                            ),
-	                            _react2.default.createElement('br', null),
-	                            _react2.default.createElement(
-	                                'p',
-	                                { className: 'description' },
-	                                project.description
-	                            )
-	                        );
-	                    })
-	                )
+	              _Col2.default,
+	              { xs: 12 },
+	              projects.map(function (project) {
+	                return _react2.default.createElement(
+	                  'div',
+	                  { key: project.name },
+	                  _react2.default.createElement('br', null),
+	                  _react2.default.createElement('br', null),
+	                  _react2.default.createElement(
+	                    _Button2.default,
+	                    { onClick: function onClick() {
+	                        return setModalShow(project.name, true);
+	                      } },
+	                    project.name
+	                  ),
+	                  _react2.default.createElement(_ProjectModal2.default, {
+	                    show: modalShow[project.name],
+	                    onHide: function onHide() {
+	                      return setModalShow(project.name, false);
+	                    },
+	                    project: project
+	                  })
+	                );
+	              })
 	            )
+	          )
 	        )
-	    );
-	};
+	      );
+	    }
+	  }]);
+
+	  return Projects;
+	}(_react2.default.Component);
 
 	Projects.propTypes = {
-	    projects: _propTypes2.default.array.isRequired
+	  projects: _propTypes2.default.array.isRequired
 	};
 
-	exports.default = Projects;
+	function mapStateToProps(state, ownProps) {
+	  return {
+	    candidate: state.candidate
+	  };
+	}
+
+	var connectedStateAndProps = (0, _reactRedux.connect)(mapStateToProps);
+
+	exports.default = connectedStateAndProps(Projects);
 
 /***/ },
-/* 42 */
+/* 43 */
+/***/ function(module, exports) {
+
+	module.exports = require("react-bootstrap/lib/Button");
+
+/***/ },
+/* 44 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _propTypes = __webpack_require__(34);
+
+	var _propTypes2 = _interopRequireDefault(_propTypes);
+
+	var _Modal = __webpack_require__(45);
+
+	var _Modal2 = _interopRequireDefault(_Modal);
+
+	var _Button = __webpack_require__(43);
+
+	var _Button2 = _interopRequireDefault(_Button);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var ProjectModal = function ProjectModal(props) {
+	  return _react2.default.createElement(
+	    _Modal2.default,
+	    _extends({}, props, {
+	      size: 'lg',
+	      'aria-labelledby': 'contained-modal-title-vcenter',
+	      centered: true
+	    }),
+	    _react2.default.createElement(
+	      _Modal2.default.Header,
+	      { closeButton: true },
+	      _react2.default.createElement(
+	        _Modal2.default.Title,
+	        { id: 'contained-modal-title-vcenter' },
+	        props.project.name
+	      )
+	    ),
+	    _react2.default.createElement(
+	      _Modal2.default.Body,
+	      null,
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        props.project.description
+	      )
+	    ),
+	    _react2.default.createElement(
+	      _Modal2.default.Footer,
+	      null,
+	      _react2.default.createElement(
+	        _Button2.default,
+	        { onClick: props.onHide },
+	        'Close'
+	      )
+	    )
+	  );
+	};
+
+	ProjectModal.propTypes = {
+	  props: _propTypes2.default.object
+	};
+
+	exports.default = ProjectModal;
+
+/***/ },
+/* 45 */
+/***/ function(module, exports) {
+
+	module.exports = require("react-bootstrap/lib/Modal");
+
+/***/ },
+/* 46 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1610,13 +1820,13 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Degree = __webpack_require__(43);
+	var _Degree = __webpack_require__(47);
 
 	var _Degree2 = _interopRequireDefault(_Degree);
 
-	var _reactBootstrap = __webpack_require__(34);
+	var _reactBootstrap = __webpack_require__(35);
 
-	var _graduationCap = __webpack_require__(44);
+	var _graduationCap = __webpack_require__(48);
 
 	var _graduationCap2 = _interopRequireDefault(_graduationCap);
 
@@ -1687,7 +1897,7 @@
 	exports.default = DegreeList;
 
 /***/ },
-/* 43 */
+/* 47 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1702,9 +1912,9 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactBootstrap = __webpack_require__(34);
+	var _reactBootstrap = __webpack_require__(35);
 
-	var _BackgroundPresentation = __webpack_require__(40);
+	var _BackgroundPresentation = __webpack_require__(41);
 
 	var _BackgroundPresentation2 = _interopRequireDefault(_BackgroundPresentation);
 
@@ -1775,13 +1985,13 @@
 	exports.default = Degree;
 
 /***/ },
-/* 44 */
+/* 48 */
 /***/ function(module, exports) {
 
 	module.exports = require("react-icons/lib/fa/graduation-cap");
 
 /***/ },
-/* 45 */
+/* 49 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1794,7 +2004,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Grid = __webpack_require__(46);
+	var _Grid = __webpack_require__(50);
 
 	var _Grid2 = _interopRequireDefault(_Grid);
 
@@ -1806,7 +2016,7 @@
 
 	var _Col2 = _interopRequireDefault(_Col);
 
-	var _language = __webpack_require__(47);
+	var _language = __webpack_require__(51);
 
 	var _language2 = _interopRequireDefault(_language);
 
@@ -1883,19 +2093,19 @@
 	exports.default = Languages;
 
 /***/ },
-/* 46 */
+/* 50 */
 /***/ function(module, exports) {
 
 	module.exports = require("react-bootstrap/lib/Grid");
 
 /***/ },
-/* 47 */
+/* 51 */
 /***/ function(module, exports) {
 
 	module.exports = require("react-icons/lib/fa/language");
 
 /***/ },
-/* 48 */
+/* 52 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1910,7 +2120,7 @@
 
 	var types = _interopRequireWildcard(_actionTypes);
 
-	var _CandidateApiClient = __webpack_require__(49);
+	var _CandidateApiClient = __webpack_require__(53);
 
 	var _CandidateApiClient2 = _interopRequireDefault(_CandidateApiClient);
 
@@ -1933,7 +2143,7 @@
 	}
 
 /***/ },
-/* 49 */
+/* 53 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1944,7 +2154,7 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	__webpack_require__(50);
+	__webpack_require__(54);
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -1970,7 +2180,7 @@
 	exports.default = CandidateApiClient;
 
 /***/ },
-/* 50 */
+/* 54 */
 /***/ function(module, exports) {
 
 	module.exports = require("isomorphic-fetch");

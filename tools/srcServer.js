@@ -1,6 +1,3 @@
-// import express from 'express';
-// import webpack from 'webpack';
-// import path from 'path';
 import React from 'react';
 import { StaticRouter } from 'react-router';
 import ReactDOMServer from 'react-dom/server';
