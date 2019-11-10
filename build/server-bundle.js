@@ -1654,7 +1654,6 @@
 	        _this2.setState({ modalShow: modalShow });
 	      };
 
-	      console.log(modalShow);
 	      return _react2.default.createElement(
 	        _Row2.default,
 	        null,
@@ -1664,7 +1663,7 @@
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'span-basic thick' },
-	            'Projects'
+	            'Projects (click on the titles to see the projects description)'
 	          ),
 	          _react2.default.createElement(
 	            _Row2.default,
@@ -1861,21 +1860,25 @@
 	                        'div',
 	                        { className: 'workexp' },
 	                        _react2.default.createElement(
-	                            _reactBootstrap.Col,
-	                            { xs: 12, sm: 1 },
+	                            _reactBootstrap.Row,
+	                            null,
 	                            _react2.default.createElement(
-	                                'div',
-	                                { className: 'divImg' },
-	                                _react2.default.createElement(_graduationCap2.default, { className: 'imgSize' })
-	                            )
-	                        ),
-	                        _react2.default.createElement(
-	                            _reactBootstrap.Col,
-	                            { xs: 12, sm: 11 },
+	                                _reactBootstrap.Col,
+	                                { xs: 12, sm: 1 },
+	                                _react2.default.createElement(
+	                                    'div',
+	                                    { className: 'divImg' },
+	                                    _react2.default.createElement(_graduationCap2.default, { className: 'imgSize' })
+	                                )
+	                            ),
 	                            _react2.default.createElement(
-	                                'span',
-	                                { className: 'exph2' },
-	                                'Education'
+	                                _reactBootstrap.Col,
+	                                { xs: 12, sm: 11 },
+	                                _react2.default.createElement(
+	                                    'span',
+	                                    { className: 'exph2' },
+	                                    'Education'
+	                                )
 	                            )
 	                        ),
 	                        this.props.education.map(function (degree) {
@@ -2035,21 +2038,25 @@
 	        'div',
 	        { className: 'workexp' },
 	        _react2.default.createElement(
-	          _Col2.default,
-	          { xs: 12, sm: 1 },
+	          _Row2.default,
+	          null,
 	          _react2.default.createElement(
-	            'div',
-	            { className: 'divImg' },
-	            _react2.default.createElement(_language2.default, { className: 'imgSize' })
-	          )
-	        ),
-	        _react2.default.createElement(
-	          _Col2.default,
-	          { xs: 12, sm: 11 },
+	            _Col2.default,
+	            { xs: 12, sm: 1 },
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'divImg' },
+	              _react2.default.createElement(_language2.default, { className: 'imgSize' })
+	            )
+	          ),
 	          _react2.default.createElement(
-	            'span',
-	            { className: 'exph2' },
-	            'Languages'
+	            _Col2.default,
+	            { xs: 12, sm: 11 },
+	            _react2.default.createElement(
+	              'span',
+	              { className: 'exph2' },
+	              'Languages'
+	            )
 	          )
 	        ),
 	        _react2.default.createElement(

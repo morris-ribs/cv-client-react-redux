@@ -9,12 +9,14 @@ const Languages = ({languages}) => {
     <Row className="exp">
       <Col xs={12}>
         <div className="workexp">
-          <Col xs={12} sm={1}>
-            <div className="divImg"><FaLanguage className="imgSize" /></div>
-          </Col>
-          <Col xs={12} sm={11}>                        
-            <span className="exph2">Languages</span>
-          </Col>
+          <Row>
+            <Col xs={12} sm={1}>
+              <div className="divImg"><FaLanguage className="imgSize" /></div>
+            </Col>
+            <Col xs={12} sm={11}>                        
+              <span className="exph2">Languages</span>
+            </Col>
+          </Row>
           <Row>
             <Col xs={12}>
               <div style={{marginTop:"30px"}}>                  

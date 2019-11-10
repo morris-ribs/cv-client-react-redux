@@ -14,12 +14,14 @@ class DegreeList extends React.Component {
             <Row className="exp">
                 <Col xs={12}>
                     <div className="workexp">
-                        <Col xs={12} sm={1}>
-                            <div className="divImg"><FaGraduationCap className="imgSize" /></div>
-                        </Col>
-                        <Col xs={12} sm={11}>                        
-                            <span className="exph2">Education</span>
-                        </Col>                    
+                        <Row>
+                            <Col xs={12} sm={1}>
+                                <div className="divImg"><FaGraduationCap className="imgSize" /></div>
+                            </Col>
+                            <Col xs={12} sm={11}>                        
+                                <span className="exph2">Education</span>
+                            </Col>
+                        </Row>                  
                         {this.props.education.map(degree => 
                             <Degree degree={degree} key={degree.schoolname} />
                         )} 
